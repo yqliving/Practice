@@ -26,7 +26,7 @@
             } 
             //if there is no left child anymore, pop up current top node and add it to result
             else {
-                //node = nodeStack.front();
+                node = nodeStack.top();
                 nodeStack.pop_back();
                 result.push_back(node->val);
                 node = node->right;
