@@ -9,7 +9,7 @@
  */
  class Solution {
     public:
-    vector<int> inorderTraversal(TreeNode* root) {
+    vector<int> preorderTraversal(TreeNode* root) {
         vector<int> result;
         if(root == NULL) return result;
         
@@ -26,7 +26,7 @@
             } 
             //if there is no left child anymore, pop up current top node and add it to result
             else {
-                node = nodeStack.front();
+                //node = nodeStack.front();
                 nodeStack.pop_back();
                 result.push_back(node->val);
                 node = node->right;
