@@ -20,7 +20,7 @@ class Solution {
         
         while (!nodeStack.empty() || node != NULL) {
             //walk through left child node at first
-            if (node != node) {
+            if (node != NULL) {
                 nodeStack.push_back(node);
                 node = node->left;
             } 
