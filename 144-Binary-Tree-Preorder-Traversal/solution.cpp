@@ -7,7 +7,27 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
- 
+//recursive
+class Solution {
+public:
+    vector<int> preorderTraversal(TreeNode* root) {
+        vector<int> ret;
+        myPreorderTraversal(root, ret);
+
+        return ret;
+    }
+    void myPreorderTraversal(TreeNode *root, vector<int> &vec)
+    {
+        if (root == NULL)
+            return;
+
+        vec.push_back(root->val);
+
+        myPreorderTraversal(root->left, vec);
+        myPreorderTraversal(root->right, vec);
+    }
+};
+
  //stack
 /*class Solution {
 public:
@@ -39,26 +59,3 @@ public:
 
 begin() end() 返回vector头 尾 元素对应的地址
 front() back() 返回vector头 尾 元素*/
-
-
-
-//recursive
-class Solution {
-public:
-    vector<int> preorderTraversal(TreeNode* root) {
-        vector<int> ret;
-        myPreorderTraversal(root, ret);
-
-        return ret;
-    }
-    void myPreorderTraversal(TreeNode *root, vector<int> &vec)
-    {
-        if (root == NULL)
-            return;
-
-        vec.push_back(root->val);
-
-        myPreorderTraversal(root->left, vec);
-        myPreorderTraversal(root->right, vec);
-    }
-};
