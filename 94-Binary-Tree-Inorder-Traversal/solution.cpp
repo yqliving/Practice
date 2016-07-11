@@ -7,6 +7,27 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+ 
+//recursive
+class Solution {
+    public:
+        vector<int> inorderTraversal(TreeNode* root) {
+            vector<int> result;
+            if(!root) {
+                return result;
+            }
+            vector<int> left = inorderTraversal(root->left);
+            left.push_back(root->val);
+            vector<int> right = inorderTraversal(root->right);
+            
+            left.insert(left.end(), right.begin(), right.end());
+            return left;
+        }
+    };
+    
+//recursive    
+//stack
+/*
 class Solution {
     public:
     vector<int> inorderTraversal(TreeNode* root) {
