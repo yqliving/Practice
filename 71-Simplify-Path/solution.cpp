@@ -16,7 +16,7 @@ class Solution {
         for (auto str : simplify) {
             ans += "/" + str;
         }
-        if (ans.empty) ans = "/";
+        if (ans.empty()) ans = "/";
         return ans;
     }
 };
