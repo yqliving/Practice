@@ -20,7 +20,7 @@ public:
         while(1) {
             if(root != NULL) {
                 ans.push_back(root->val);
-                if(root->right != NULL) treeStack.push(root->right);
+                if(root->right != NULL) treeStack.push_back(root->right);
                 root = root->left;
             } else {
                 if(treeStack.size() == 0) break;
