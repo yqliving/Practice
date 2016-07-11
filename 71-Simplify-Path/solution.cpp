@@ -6,7 +6,7 @@ class Solution {
         string temp;
         while (getline(ss, temp, '/')) {
             if (temp == "" || temp == ".") continue;
-            else if (temp == ".." && simplify.empth()) {
+            else if (temp == ".." && simplify.empty()) {
                 simplify.pop_back();
             } else if (temp != "..") {
                 simplify.push_back();
