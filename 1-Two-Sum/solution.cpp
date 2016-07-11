@@ -1,6 +1,4 @@
-//
-// Created by Xiaoying Gao on 6/14/16.
-//
+
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
