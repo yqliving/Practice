@@ -1,9 +1,9 @@
 class Solution {
     public:
     string simplifyPath (string path) {
-        vector<string> simplify,ans;
+        vector<string> simplify;
         stringstream ss(path);
-        string temp;
+        string temp, ans;
         while (getline(ss, temp, '/')) {
             if (temp == "" || temp == ".") continue;
             else if (temp == ".." && simplify.empty()) {
