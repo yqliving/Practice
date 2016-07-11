@@ -5,7 +5,9 @@ class Solution {
     map<char, char> m = {{']','['}, {')','('}, {'}','{'}};
     for (int i = 0; i < s.size(); i++) {
         if (s[i] == '[' || s[i] == '{' || s[i] == '(') 
-        temp.push_back(s[i]);
+        temp.push(s[i]);                      
+        //  class std::stack<char>’ has no member named ‘push_back’
+        
         else if (s[i] == ']' || s[i] == '}' || s[i] == ')') {
             if (temp.empty() || temp.top != m[s[i]]) return false;
             else temp.pop();
