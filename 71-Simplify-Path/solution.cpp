@@ -9,7 +9,7 @@ class Solution {
             else if (temp == ".." && simplify.empty()) {
                 simplify.pop_back();
             } else if (temp != "..") {
-                simplify.push_back();
+                simplify.push_back(temp);
             }
         }
         string ans = "";
