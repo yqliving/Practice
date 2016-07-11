@@ -9,7 +9,7 @@
  */
  
 //recursive
-class Solution {
+/*class Solution {
     public:
         vector<int> inorderTraversal(TreeNode* root) {
             vector<int> result;
@@ -23,11 +23,11 @@ class Solution {
             left.insert(left.end(), right.begin(), right.end());
             return left;
         }
-    };
+    };*/
     
 //recursive    
 //stack
-/*
+
 class Solution {
     public:
     vector<int> inorderTraversal(TreeNode* root) {
