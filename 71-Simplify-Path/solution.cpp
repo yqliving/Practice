@@ -1,7 +1,7 @@
 class Solution {
     public:
     string simplifyPath (string path) {
-        vector<string> simplify;
+        vector<string> simplify,ans;
         stringstream ss(path);
         string temp;
         while (getline(ss, temp, '/')) {
@@ -12,14 +12,15 @@ class Solution {
                 simplify.push_back(temp);
             }
         }
-        string ans = "";
-        for (string i : simplify) {
-            ans += "/" + i;
+        
+        for (auto str : simplify) {
+            ans += "/" + str;
         }
-        if (ans == "") ans = "/";
+        if (ans.empty) ans = "/";
         return ans;
     }
 };
+
 /*stringstream 是 C++ 提供的另一个字串型的串流(stream)物件，和之前学过的 iostream、fstream 有类似的操作方式。要使用 stringstream， 必須先加入這一行：
 #include <sstream>
 stringstream 主要是用在將一個字串分割，可以先用 clear( )以及 str( ) 將指定字串設定成一开始的內容;
