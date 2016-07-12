@@ -24,6 +24,12 @@ By calling _next_ repeatedly until _hasNext_ returns false, the order of element
 
 <div>
 
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
+
+<span class="hidebutton">[Facebook](/company/facebook/) [Google](/company/google/) [Twitter](/company/twitter/)</span></div>
+
+<div>
+
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Stack](/tag/stack/) [Design](/tag/design/)</span></div>
