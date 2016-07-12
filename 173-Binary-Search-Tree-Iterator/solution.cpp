@@ -8,28 +8,39 @@
  * };
  */
 class BSTIterator {
-    stack<TreeNode *> myStack;
+private:
+    stack<TreeNode*> st;
 public:
     BSTIterator(TreeNode *root) {
-        pushAll(root);
+        find_left(root);
     }
 
     /** @return whether we have a next smallest number */
     bool hasNext() {
-        return !myStack.empty();
+        if (st.empty())
+            return false;
+        return true;
     }
 
     /** @return the next smallest number */
     int next() {
-        TreeNode *tmpNode = myStack.top();
-        myStack.pop();
-        pushAll(tmpNode->right);
-        return tmpNode->val;
+        TreeNode* top = st.top();
+        st.pop();
+        if (top->right != NULL)
+            find_left(top->right);
+            
+        return top->val;
     }
-
-private:
-    void pushAll(TreeNode *node) {
-        for (; node != NULL; myStack.push(node), node = node->left);
+    
+    /** put all the left child() of root */
+    void find_left(TreeNode* root)
+    {
+        TreeNode* p = root;
+        while (p != NULL)
+        {
+            st.push(p);
+            p = p->left;
+        }
     }
 };
 
