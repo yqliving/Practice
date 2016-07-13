@@ -1,3 +1,4 @@
+
 class Solution {
 public:
     string longestPalindrome(string s) {
@@ -5,14 +6,14 @@ public:
         if(n<2)
             return s;
 
-        int leftMost=0, rightMost=0;
+        int leftMost=0, maxLen=0;
         int start, end;
         int i = 0;
-        while (i < n - (rightMost - leftMost + 1)/2 )
+        while (i < n - maxLen/2 )
         {
             start = i;
             end = i;
-            while(end < n - 1 && s[end]==s[end + 1])
+            while(end < n - 1 && s[end + 1]==s[end])
             {
                 end ++;
             }
@@ -22,15 +23,16 @@ public:
                 start--;
                 end++;
             }
+            int len = end - start + 1;
 
-            if(rightMost-leftMost <= end-start)
+            if(maxLen < len)
             {
                 leftMost = start;
-                rightMost = end;
+                maxLen = end;
             }
         }
 
-        return s.substr(leftMost, rightMost-leftMost+1);
+        return s.substr(leftMost, maxLen);
     }
 };
 // find the middle vulue of the Palindromic Substring, check if its left = right;
