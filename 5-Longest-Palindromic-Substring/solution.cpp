@@ -7,7 +7,8 @@ public:
 
         int leftMost=0, rightMost=0;
         int start, end;
-        for (int i = 0; i < n; i++)
+        int i = 0;
+        while (i < n - (rightMost - leftMost + 1)/2 )
         {
             start = i;
             end = i;
