@@ -1,7 +1,7 @@
 class Solution {
     public:
     string convert (string s, int nRows) {
-        if (nRows < 2) return s;
+        if (nRows <= 1) return s;
         int n = s.size();
         string res;
         for (int i = 0; i < nRows; i++) {
