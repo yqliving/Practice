@@ -10,7 +10,7 @@ class Solution {
         vector<vector<string>> res;
         for (auto c : count) {
             sort(c.second.begin(), c.second.end());  // output from a-z
-            res.push_back(n.second);
+            res.push_back(c.second);
         }
         return res;
     }
