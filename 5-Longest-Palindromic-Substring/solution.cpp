@@ -9,7 +9,7 @@ public:
         int leftMost=0, maxLen=0;
         int start, end;
         int i = 0;
-        while (i < n - maxLen/2 )
+        while (i <= n - maxLen/2 )
         {
             start = i;
             end = i;
