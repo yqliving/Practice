@@ -3,18 +3,24 @@ class Solution {
 public:
     string longestPalindrome(string s) 
     {
-        int sLen = s.length(), maxLen = 0, maxStart = 0;
-        int i = 0, l = 0, r = 0, len = 0;
-        while(i<=sLen-maxLen/2)
+        int n = s.length(), maxLen = 0, leftMost = 0;
+        int i = 0, start = 0, end = 0, len = 0;
+        while(i <= n - maxLen/2)
         {
-            l = r = i;
-            while(r<sLen-1 && s[r+1]==s[r]) r++;
-            i = r+1;
-            while(l>0 && r<sLen-1 && s[r+1]==s[l-1]) l--, r++;
-            len = r-l+1;
-            if(maxLen < len) maxLen = len, maxStart = l;
+            start = end = i;
+            while(end <n-1 && s[end+1]==s[end]) end++;
+            i = end+1;
+            while(start>0 && end<n-1 && s[end+1]==s[start-1]) {
+                start --;
+                end ++;
+            }
+            len = end - start + 1;
+            if(maxLen < len) {
+                leftMost = start;
+                maxLen = len;
+            }
         }
-        return s.substr(maxStart, maxLen);
+        return s.substr(leftMost, maxLen);
     }
 };
 // find the middle vulue of the Palindromic Substring, check if its left = right;
