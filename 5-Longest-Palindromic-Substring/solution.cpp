@@ -5,7 +5,7 @@ public:
     {
         int n = s.length(), maxLen = 0, leftMost = 0;
         int i = 0, start = 0, end = 0, len = 0;
-        while(i <= n - maxLen/2)
+        while(i <= n - maxLen/2)     //!!!!!! 条件
         {
             start = end = i;
             while(end <n-1 && s[end+1]==s[end]) end++;
