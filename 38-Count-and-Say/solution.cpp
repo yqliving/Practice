@@ -2,7 +2,7 @@ class Solution {
     public:
     string countAndSay(int n) {
         string res = "1";
-        for (int i = 1; i , n; i++) {
+        for (int i = 1; i < n; i++) {
             stringstream ss;
             int j = 0;
             int N = res.size();
