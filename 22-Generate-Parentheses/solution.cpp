@@ -6,6 +6,7 @@
 class Solution {
     public:
     vector<string> generateParenthesis(int n) {
+        vector<string> res;
         generate (res, n, n, "");
         return res;
     }
@@ -15,8 +16,8 @@ class Solution {
             res.push_back(s);
         } 
         if (left > 0) 
-            generate(res, left - 1, right, "(");
-        if (right > 0)
-            generate(res, left, right - 1, ")");
+            generate(res, left - 1, right, s + "("); // 注意有s
+        if (right > left)
+            generate(res, left, right - 1, s + ")");
     }
 };
