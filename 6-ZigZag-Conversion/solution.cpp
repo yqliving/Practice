@@ -1,15 +1,32 @@
-class Solution {
+/*class Solution {
     public:
     string convert (string s, int nRows) {
-        if (nRows <= 1) return s;
+        if (nRows < 2) return s;
         int n = s.size();
         string res;
         for (int i = 0; i < nRows; i++) {
-            for (int j = 0; j + i < n; j += 2*nRow - 2) {
+            for (int j = 0; j + i < n; j += 2*nRows - 2) {
                 res.push_back(s[j+1]);
                 if (i == 0 || i == nRows - 1) continue;
                 if (j + 2*nRows - 2 - i < n) 
                     res.push_back(s[j + 2*nRows -2 - i]);
+            }
+        }
+        return res;
+    }
+};*/
+class Solution {
+public:
+    string convert(string s, int nRows) {
+        if(nRows <= 1) return s;
+        int n = s.size();
+        string res;
+        for(int i = 0;i < nRows; ++i){
+            for (int j = 0; j  + i < n; j += 2*nRows - 2) {
+                res.push_back(s[j+i]);
+                if (i == 0 || i == nRows - 1) continue;
+                if (j + 2*nRows - 2 - i < n)
+                    res.push_back(s[j + 2*nRows - 2 - i]);
             }
         }
         return res;
