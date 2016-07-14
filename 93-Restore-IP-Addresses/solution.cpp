@@ -1,6 +1,6 @@
 class Solution {
     public:
-    vector<string> restoreIpAddress(const string s) {
+    vector<string> restoreIpAddresses(string s) {
         vector<string> res, ip;
         dfs(s, ip, res, 0);
         return res;
