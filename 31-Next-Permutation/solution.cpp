@@ -35,7 +35,7 @@ class Solution {
     public:
     void nextPermutation(vector<int>& nums) {
         int len = nums.size() - 1, i;
-        for (i = length; i >= 1; i --) {
+        for (i = len; i >= 1; i --) {
             if (nums[i] > nums[i - 1]) break;
         }
         if (i == 0) {
