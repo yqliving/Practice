@@ -3,7 +3,7 @@
 class Solution {
     public:
     vector<string> restoreIpAddresses(string s) {
-        vector<string> res, ip;
+        vector<string> res, ip; //存放中间结果
         dfs(s, ip, res, 0);
         return res;
     }
