@@ -47,7 +47,7 @@ class Solution {
         while (nums[left] >= nums[right]) right--;
         swap(nums[left], num[right]);
         
-        reserse(nums.begin() + left + 1, nums.end());
+        reverse(nums.begin() + left + 1, nums.end());
     }
 };
 /*
