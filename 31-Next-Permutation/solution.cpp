@@ -50,26 +50,3 @@ class Solution {
         reverse(nums.begin() + left + 1, nums.end());
     }
 };
-/*
-class Solution {
-public:
-void nextPermutation(vector<int>& nums) {
-
-    int length=nums.size()-1, i;
-    for(i=length;i>=1;i--) {
-    if(nums[i]>nums[i-1])break;
-    }
-    if(i==0){
-        reverse(nums.begin(), nums.end());
-        return;
-    }
-    int left = i-1;
-    int right = nums.size() - 1;
-
-    while (nums[left] >= nums[right] )right--;
-        swap(nums[left], nums[right]);
-
-    reverse(nums.begin() + left+1, nums.end());
-
-}
-};
