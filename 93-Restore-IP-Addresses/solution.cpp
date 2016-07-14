@@ -9,7 +9,7 @@ class Solution {
     void dfs(string s, vector<string>& ip, vector<string>& res, int start) {
         if (ip.size() == 4 && start == s.size()) {
             res.push_back(ip[0] + '.' + ip[1] + '.' + ip[2] + '.' + ip[3]);
-            return
+            return;
         }
         if (s.size() - start > (4 - ip.size()) * 3) return;
         if (s.size() - start < (4 - ip.size())) return;
