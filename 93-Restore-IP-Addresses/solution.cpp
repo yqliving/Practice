@@ -19,7 +19,7 @@ class Solution {
             num = num * 10 + (s[i] - '0');
             if (num < 0 || num > 255) continue;
             ip.push_back(s.substr(start, i - start + 1));
-            dfs(s, ip, result, i + 1);
+            dfs(s, ip, res, i + 1);
             ip.pop_back();
             if (num == 0) break;
         }
