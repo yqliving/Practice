@@ -39,7 +39,7 @@ class Solution {
             if (nums[i] > nums[i - 1]) break;
         }
         if (i == 0) {
-            reverse (nums.begin(), nums,end());
+            reverse (nums.begin(), nums.end());
             return;
         }
         int left= i - 1;
