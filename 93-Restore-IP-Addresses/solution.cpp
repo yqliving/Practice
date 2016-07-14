@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<string> restoreIpAddresses(string s) {
         vector<vector<string>> cur(4), prev(4);
-        cur[0].push_back(s.begin());
+        cur[0].push_back(s.substr(0,1));
         for (int i = 1; i < s.size(); ++i) {
             swap(cur, prev);
             for (int p = 0; p < 4; ++p) {
