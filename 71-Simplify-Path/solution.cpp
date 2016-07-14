@@ -3,7 +3,7 @@ class Solution {
     string simplifyPath (string path) {
         vector<string> simplify;
         stringstream ss(path);
-        string temp, ans;
+        string temp, res;
         while (getline(ss, temp, '/')) {
             if (temp == "" || temp == ".") continue;
             else if (temp == ".." && !simplify.empty()) {
@@ -12,12 +12,11 @@ class Solution {
                 simplify.push_back(temp);
             }
         }
-        
         for (auto str : simplify) {
-            ans += "/" + str;
+            res += "/" + str;
         }
-        if (ans.empty()) ans = "/";
-        return ans;
+        return res.empty() ? "/" : res; 
+        
     }
 };
 
