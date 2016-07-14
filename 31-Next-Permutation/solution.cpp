@@ -45,7 +45,7 @@ class Solution {
         int left= i - 1;
         int right = nums.size() - 1;
         while (nums[left] >= nums[right]) right--;
-        swap(nums[left], num[right]);
+        swap(nums[left], nums[right]);
         
         reverse(nums.begin() + left + 1, nums.end());
     }
