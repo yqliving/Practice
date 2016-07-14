@@ -1,4 +1,5 @@
 //dfs，必须深度搜索才能判断其合理性
+//time complexity O(n^4), space complexity O(n)
 class Solution {
     public:
     vector<string> restoreIpAddresses(string s) {
