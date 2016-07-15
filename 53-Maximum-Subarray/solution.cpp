@@ -3,7 +3,7 @@ class Solution {
     int maxSubArray(vector<int>& nums) {
         int len = nums.size();
         if (len == 0) return 0;
-        if (l == 0) return 0;
+        if (len == 0) return 0;
         int maxn, temp;
         maxn = temp = nums[0];
         for (int i = 1; i < len; i++) {
