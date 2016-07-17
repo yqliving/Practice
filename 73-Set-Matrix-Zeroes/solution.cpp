@@ -26,10 +26,10 @@ public:
             }
         }
         if (row) {
-            for (j = 0; j < lenC; j++) matrix[0][j] = 0;
+            for (int j = 0; j < lenC; j++) matrix[0][j] = 0;
         }
         if (col) {
-            for (i = 0; i < lenR; i++) matrix[i][0] = 0;
+            for (int i = 0; i < lenR; i++) matrix[i][0] = 0;
         }
     }
 };
