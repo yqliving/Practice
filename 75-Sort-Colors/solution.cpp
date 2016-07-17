@@ -2,7 +2,7 @@ class Solution {
 public:
     void sortColors(vector<int>& A) {
         sort(A.begin(), A.end());
-        return A;
+        //return A;
     }
 };
 /*class Solution {
