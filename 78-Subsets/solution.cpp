@@ -32,7 +32,6 @@ Adding the third number to all the existed subsets: [[], [1], [2], [1, 2], [3], 
 Have you got the idea :-)
 
 The code is as follows. 
-
 class Solution {
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
