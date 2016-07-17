@@ -13,7 +13,7 @@ public:
 
         for (int i = 0; i < lenR; i++) {
             for (int j = 0; j < lenC; j ++) {
-                if (maxtrix[i][j] == 0) {
+                if (matrix[i][j] == 0) {
                     if (i == 0) row = true;
                     if (j == 0) col = true;
                     matrix[0][j] = matrix[i][0] = 0;
