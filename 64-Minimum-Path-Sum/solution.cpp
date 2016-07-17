@@ -1,4 +1,4 @@
-class Solution {
+/*class Solution {
 public:
 int minPathSum(vector<vector<int> > &grid) {
     if (grid.size()<=0){
@@ -19,12 +19,12 @@ int minPathSum(vector<vector<int> > &grid) {
 
     return grid[grid.size()-1][grid[0].size()-1];
 }
-};
+};*/
 /*2-d DP: Time ~ O(N^2), Space ~ O(M*N)
 Let d(i,  j) be the min path sum from grid[0,  0] (top left) to grid[i, j].
 d(i, j) = min{d(i - 1, j), d(i, j - 1)} + grid[i, j];
 Return d(M - 1, N - 1).
-Use top-down approach.
+Use top-down approach.*/
 
 class Solution {
 public:
