@@ -1,24 +1,4 @@
 class Solution {
-    public:
-    int removeDuplicates(vector<int>& nums) {
-        int len = 1;
-        int dup = 1;
-        for (int i = 1; i < nums.size(); i++) {
-            if (nums[i] == nums[i - 1] && dup < 2) {
-                dup++;
-                len++;
-            } else if (nums[i] != nums[i - 1]) {
-                len++;
-                dup = 1;   
-            } else {
-                nums.erase(nums.begin() + i);
-                i--;
-            }
-        }
-        return nums.size();
-    }
-};
-/*class Solution {
 public:
 int removeDuplicates(vector<int>& nums) {
     int i = 0;
