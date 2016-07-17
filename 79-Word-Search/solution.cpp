@@ -1,11 +1,12 @@
+
 class Solution {
-    public:
+public:
     bool exist(vector<vector<char>>& board, string word) {
-        int row = board.size();
-        if (row == 0) return false;
-        int col = board[0].szie();
+        row = board.size();
+        if(row == 0) return false;
+        col = board[0].size();
         if (col == 0) return false;
-        
+
         for(int i = 0; i < row; i++)
             for(int j = 0; j < col; j++)
                 if(findWord(i, j, 0, word, board)) return true;
@@ -33,5 +34,3 @@ private:
         return false;
     }
 };
-
-//recursion
