@@ -20,7 +20,7 @@ public:
         }
     }
 };
-/**
+
 /*
 Iterative
 
@@ -32,7 +32,7 @@ Adding the second number to all the existed subsets: [[], [1], [2], [1, 2]];
 Adding the third number to all the existed subsets: [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]].
 Have you got the idea :-)
 
-The code is as follows. */
+The code is as follows. 
 
 class Solution {
 public:
@@ -65,7 +65,7 @@ There is also another a way to visualize this idea. That is, if we use the above
 
 [], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]
 
-The code is as follows. */
+The code is as follows. 
 
 class Solution {
 public:
