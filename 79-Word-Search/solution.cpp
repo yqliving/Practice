@@ -2,8 +2,8 @@
 class Solution {
 public:
     bool exist(vector<vector<char>>& board, string word) {
-        int row = board.size();
-        int col = board[0].size();
+        row = board.size();
+        col = board[0].size();
         if (row == 0 || col == 0) return false;
 
         for(int i = 0; i < row; i++)
@@ -13,6 +13,7 @@ public:
     }
 
 private:
+    int row, col;
 
     bool findWord(int i, int j, int idx, string& word, vector<vector<char>>& board){
         if(idx == word.size()) return true;
