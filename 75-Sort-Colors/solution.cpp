@@ -4,6 +4,7 @@ public:
         sort(A.begin(), A.end());
         return A;
     }
+};
 /*class Solution {
 public:
     void sortColors(vector<int>& A) {
