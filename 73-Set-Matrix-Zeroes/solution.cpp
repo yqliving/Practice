@@ -6,8 +6,8 @@ zero columns (except the first column) according to the first row;
 zero first row and first column if needed. */
 
 class Solution {
-    public:
-    void setZeroes{vector<vector<int>>& matrix} {
+public:
+    void setZeroes(vector<vector<int>>& matrix) {
         bool row = false, col = false;
         int lenR = matrix.size(), lenC = matrix[0].size();
 
