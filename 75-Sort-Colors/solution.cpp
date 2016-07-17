@@ -1,13 +1,6 @@
 class Solution {
 public:
     void sortColors(vector<int>& A) {
-        sort(A.begin(), A.end());
-        //return A;
-    }
-};
-/*class Solution {
-public:
-    void sortColors(vector<int>& A) {
      int n = A.size();
      int red = 0, blue = n-1;
         int i = 0;
