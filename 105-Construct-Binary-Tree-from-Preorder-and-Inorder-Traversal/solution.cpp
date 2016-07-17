@@ -18,8 +18,10 @@ class Solution {
         if (i >= j || ii >= j) return NULL;
         
         int min = preorder[i];
-        auto f = find(inorder.begin() + ii, inorder.begin + jj, mid);
+        auto f = find(inorder.begin() + ii,inorder.begin() + jj,mid);
+
         int dis = f - inorder.begin() - ii;
+
         TreeNode* root = new TreeNode(mid);
         root -> left = Build(preorder,i + 1,inorder,ii);
         root -> right = Build(preorder,i + 1 + dis,inorder,ii + dis + 1);
