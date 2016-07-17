@@ -3,7 +3,7 @@ class Solution {
 public:
     bool exist(vector<vector<char>>& board, string word) {
         row = board.size();
-        col = board[0].size();
+        col = board[0].size();      //注意在private里面已经声明过
         if (row == 0 || col == 0) return false;
 
         for(int i = 0; i < row; i++)
