@@ -24,7 +24,7 @@ class Solution {
         if (carry > 0) temp->next = new ListNode(carry);
         return res;
     }
-}
+};
 
 
 // Java
