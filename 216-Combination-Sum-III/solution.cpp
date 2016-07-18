@@ -8,7 +8,7 @@ class Solution {
     }
     
     void dfs(vector<vector<int>>& res, vector<int>& temp, int start, int k, int n) {
-        if (k == 0 || n == 0) {
+        if (k == 0 && n == 0) {
             res.push_back(temp);
             return;
         }
@@ -16,6 +16,9 @@ class Solution {
         temp.push_back(start);
         dfs (res, temp, start + 1, k - 1, n - start);
         temp.pop_back();
-        dfs (res, temp, start, k, n);
+        dfs (res, temp, start + 1, k, n);
     }
 };
+
+
+
