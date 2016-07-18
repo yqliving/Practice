@@ -3,7 +3,7 @@ class Solution {
     bool containDuplicate(vector<int>& nums) {
         vector<int> temp;
         for (int i = 0; i < nums.size(); i++) {
-            if (count(temp, temp + i + 1, nums[i])) return true;
+            if (count(temp.begin(), temp.end(), nums[i])) return true;
             temp[i] = nums[i];
         }
         return false;
