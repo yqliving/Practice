@@ -11,6 +11,7 @@ public:
         
     }
 };*/
+// 用法 count(nums.begin(), nums.end(), target)
 
 class Solution {
 public:
