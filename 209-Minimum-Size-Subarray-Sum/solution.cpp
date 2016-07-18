@@ -11,7 +11,7 @@ class Solution {
                 pre ++;
             }
         }
-        return len > nums.szie() ? 0 : len;
+        return len > nums.size() ? 0 : len;
     }
 };
 
