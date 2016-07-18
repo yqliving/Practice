@@ -15,7 +15,7 @@ class Solution {
         if (start > 9 || start > n) return;
         temp.push_back(start);
         dfs (res, temp, start + 1, k - 1, n - start);
-        temp.pop_back(start);
+        temp.pop_back();
         dfs (res, temp, start, k, n);
     }
 };
