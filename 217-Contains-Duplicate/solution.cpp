@@ -1,7 +1,7 @@
 class Solution {
     public:
     bool containsDuplicate(vector<int>& nums) {
-        //if (nums.empty()) return true;
+        if (nums.empty()) return true;
         vector<int> temp;
         //temp[0] = nums[0];
         for (int i = 0; i < nums.size() - 1; i++) {
