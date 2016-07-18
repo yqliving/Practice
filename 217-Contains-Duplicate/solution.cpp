@@ -1,6 +1,6 @@
 class Solution {
     public:
-    bool containDuplicate(vector<int>& nums) {
+    bool containsDuplicate(vector<int>& nums) {
         vector<int> temp;
         for (int i = 0; i < nums.size(); i++) {
             if (count(temp.begin(), temp.end(), nums[i])) return true;
