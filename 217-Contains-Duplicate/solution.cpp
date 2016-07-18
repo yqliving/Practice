@@ -1,4 +1,4 @@
-class Solution {
+/*class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
         unordered_map<int, int> mp;
@@ -10,9 +10,9 @@ public:
         return false;
         
     }
-};
+};*/
 
-/*class Solution {
+class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
         int size = nums.size();
