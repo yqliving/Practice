@@ -15,7 +15,7 @@ class Solution {
     }
 };
 
-//这个是找最短的子序列
+//这个是找最短的子序列, 从前往后加
 
 //Two Pointers: Time ~ O(N), Space ~ O(1) 
 //前指针向前扫，当 sum >= s 时向前移动后指针 prev (shrink the subarray)，只到 sum < s 为止，并记录最短的 subarray 的长度。
