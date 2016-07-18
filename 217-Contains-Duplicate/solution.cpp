@@ -1,7 +1,7 @@
 class Solution {
     public:
     bool containDuplicate(vector<int>& nums) {
-        vector<int>& temp;
+        vector<int> temp;
         for (int i = 0; i < nums.szie(); i++) {
             if (temp.count(nums[i])) return true;
             temp[i] = nums[i];
