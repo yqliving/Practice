@@ -1,12 +1,12 @@
 class Solution {
     public:
-    int lengthOfLongestSibstring(string s) {
+    int lengthOfLongestSubstring(string s) {
         if (s.empty()) return 0;
         
         int p1 = 0, p2 = 1;
         int maxLen = p2 - p1;
         for (; p2 < s.size(); p2++) {
-            for (int i = 0; i < p2; i++) {
+            for (int i = p1; i < p2; i++) {
                 if (s[i] == s[p2]) {
                     p1 = i + 1;
                     break;
@@ -17,6 +17,7 @@ class Solution {
         return maxLen;
     }
 };
+
 //constant space,two indexes
 
 
