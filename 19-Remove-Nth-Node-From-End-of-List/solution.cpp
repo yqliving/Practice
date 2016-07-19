@@ -17,7 +17,7 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
         second = second->next;  //记录有多少个node，然后用node位置差，这个需要遍历两遍
     }
     int j= 0;
-    if(i==n) return head->next;
+    if(len==n) return head->next;
     while (j < len -n -1) {
         first = first->next;
         j++;
