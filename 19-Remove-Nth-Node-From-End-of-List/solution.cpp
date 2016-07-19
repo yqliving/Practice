@@ -11,14 +11,14 @@ public:
 ListNode* removeNthFromEnd(ListNode* head, int n) {
     ListNode* first = head;
     ListNode* second = head;
-    int i = 0;
+    int len = 0;
     while (second) {
-        i++;
+        len++;
         second = second->next;  //记录有多少个node，然后用node位置差，这个需要遍历两遍
     }
     int j= 0;
     if(i==n) return head->next;
-    while (j < i-n -1) {
+    while (j < len -n -1) {
         first = first->next;
         j++;
     }
