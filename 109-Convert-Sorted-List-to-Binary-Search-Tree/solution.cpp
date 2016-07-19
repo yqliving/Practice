@@ -15,8 +15,7 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-/* 
- class Solution 
+class Solution 
 {
 private:
     TreeNode* sortedListToBSTR(ListNode** head, int start, int end) 
@@ -45,11 +44,14 @@ public:
         }
         return sortedListToBSTR(&head, 0, len);
     }
-};*/
-class Solution {
+};
+//将数组逐次二分 midpoint就是当前的根 然后左边的数组就是左子树 右边的数组就是右子树
+
+
+/*class Solution {
 public:
     TreeNode* sortedListToBST(ListNode* head) {
-        return buildTree(head,NULL);
+        return buildTree(head,nullptr);
     }
     TreeNode* buildTree(ListNode* head, ListNode* afterLast){
         if(head==afterLast)
@@ -66,4 +68,4 @@ public:
         root->right=buildTree(slow->next,afterLast);
         return root;
     }
-};
+};*/
