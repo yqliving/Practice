@@ -6,6 +6,8 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+//连成一个环再断开
+
 class Solution {
 public:
     ListNode* rotateRight(ListNode* head, int k) {
