@@ -5,8 +5,8 @@ class Solution {
         int len = nums.size();
         if(len < 3) return res;
         sort(nums.begin(), nums.end());
-        for (int i = 0; i < len; i++) {
-            if (i > 0 && nums[i] = nums[i-1]) continue;
+        for (int i = 0; i < len - 2; i++) {
+            if (i > 0 && nums[i] == nums[i-1]) continue;
             int a = nums[i];
             int left = i + 1;
             int right = len - 1;
@@ -17,13 +17,14 @@ class Solution {
                     res.push_back(vector<int> {a, b, c});
                     
                     while (left < len && nums[left] == b) left++;
-                    while (right > 0 && nums[right] == c) right --;
+                    while (right >= 0 && nums[right] == c) right --;
                 }
                 else if (a + b + c > 0) right --;
-                else left --;
+                else left ++;
             }
         }
         return res;
         
     }
 };
+
