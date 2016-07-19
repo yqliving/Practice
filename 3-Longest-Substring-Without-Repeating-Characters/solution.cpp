@@ -14,7 +14,7 @@ class Solution {
             }
             maxLen = max(maxLen, p2 - p1 + 1);
         }
-        return maxLen
+        return maxLen;
     }
 };
 //constant space,two indexes
