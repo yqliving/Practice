@@ -17,12 +17,6 @@ Given an array _S_ of _n_ integers, find three integers in _S_ such that the sum
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
-
-<span class="hidebutton">[Bloomberg](/company/bloomberg/)</span></div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Array](/tag/array/) [Two Pointers](/tag/two-pointers/)</span></div>
