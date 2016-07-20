@@ -8,8 +8,8 @@
  */
 class Solution {
     public:
-    ListNode* partition (ListNode* head, int x) {
-        ListNode* dummy1 = new ListNode(0), *dummy2 = new ListNode(0), *node1, node2;
+    ListNode* partition(ListNode* head, int x) {
+        ListNode *dummy1 = new ListNode(0), *dummy2 = new ListNode(0), *node1, *node2;
         node1 = dummy1;
         node2 = dummy2;
         while(head) {
