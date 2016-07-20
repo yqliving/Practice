@@ -1,4 +1,4 @@
-class Solution {
+/*class Solution {
 public:
 string getHint(string secret, string guess) {
     unordered_map<char,int> map;
@@ -29,10 +29,10 @@ string getHint(string secret, string guess) {
     
     return to_string(bulls) + "A" + to_string(cows) + "B";
 }
-};
+};*/
 
 
-/*class Solution {
+class Solution {
 public:
     string getHint(string secret, string guess) {
 	unordered_map<char, int> mp;
