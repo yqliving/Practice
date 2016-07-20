@@ -21,33 +21,29 @@ class Solution {
 //constant space,two indexes
 
 
-//2.
-//one pass, two pointers with map table
+//2. hashtable
+/*If position of last found char same as s[r] is beyond l, which means the window will have two same chars s[r] now, so we need to move forward l to shrink the window. Otherwise, l stays the same. That's all what	says. Your feedback or any thought is welcome. I really learnt a lot from all you genius.
 
-/*int str_len = s.length();
-    int l = 0;
-    int len = 0;
-    int max_len = 0;
-    int char_indexes[128]; // vector adds 4 ms. to be faster using array
-    memset(char_indexes, -1, sizeof(char_indexes)); 
+Example 1 "tmmzuxt"
 
-    char c = '\0';
-    int prev_indx_of_cur_char = 0;
-    for (int r = 0; r < str_len; ++r)
-    {
-        c = s[r];
-        prev_indx_of_cur_char = char_indexes[c];
-        if (prev_indx_of_cur_char >= l )
-        {
-            l = prev_indx_of_cur_char + 1;
-            len = r - l + 1;
+s[l] is the 2nd "m", s[r] is the last "t", and the last found t is not in the current window, no need to update l.
+
+Example 2 "mmzuxtabt"
+
+s[l] is the 2nd m, s[r] is the last "t", and the last found "t" is in the current window, so move l forward to "a". */
+/*
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int l=0, r=0, len=0;
+        unordered_map<char, int> window;
+        while(r<s.size()){
+            if(window.find(s[r])!=window.end())
+                l=max(l,window[s[r]]+1);      //see explain      
+            window[s[r]]=r;
+            len=max(len,r-l+1);
+            r++;
         }
-        else
-        {
-            ++len;
-        }
-        char_indexes[c] = r;
-        max_len = max(len, max_len);
+        return len;
     }
-
-    return max_len;
+};
