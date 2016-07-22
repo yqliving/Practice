@@ -8,6 +8,7 @@ public:
             if (matrix[i][0] > target) return false;
             else if (matrix[i][0] == target) return true;
             else {
+                
                 int start = 0;
                 int end = col - 1;
                 while (start <= end) {
