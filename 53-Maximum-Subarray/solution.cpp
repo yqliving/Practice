@@ -14,20 +14,5 @@ class Solution {
     }
 };
 
-/*first time
 
-/*class Solution {
-public:
-    int maxSubArray(vector<int>& nums) {
-        int l = nums.size();
-        int tmp ,maxn;
-        if (l == 0) return 0;
-        tmp = maxn = nums[0];
-        for (int i = 1;i < l;++i) {
-            tmp = max(nums[i],tmp+nums[i]);
-            maxn = max(tmp,maxn);
-        }
-        return maxn;
-    }
-};
 /*O(1)space,O(N)time
