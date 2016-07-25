@@ -11,9 +11,7 @@ string largestNumber(vector<int> &num) {
         result += s;
     }
     
-    int pos = 0;
-    while (result[pos] == '0' && pos + 1 < result.size()) pos++; 
-    return result.substr(pos);
+    return result[0] == '0' ? "0" : result;
 } 
 private:
 static bool compareNum(string a, string b) {
