@@ -11,17 +11,4 @@ public:
     }  
 };  
 
-
-/*class Solution {
-public:
-    int uniquePaths(int m, int n) {
-    vector<vector<int>> dp(2, vector<int>(n, 1));
-    int idx = 1;
-    for (int i = 1; i < m; i++, idx = 1 - idx) {
-        for (int j = 1; j < n; j++) {
-            dp[idx][j] = dp[idx][j - 1] + dp[1 - idx][j];
-        }
-    }
-    return dp[1 - idx][n - 1];
-}
-};
+//动态规划，定义一个二维数组 A[M][N]，从左上开始依次计算每一行的值，最后返回 A[M-1][N-1]即可，递推方程是：A[I][J]=A[I-1][J]+A[I][J-1]；
