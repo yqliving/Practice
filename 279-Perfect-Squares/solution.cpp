@@ -7,7 +7,7 @@ public:
         
         for (int i=0; i<=n; ++i) {
             dp[i] = i;
-            for (int j = 2; j<=sqrt(i); ++j) {
+            for (int j = 2; j*j<=i; ++j) {
                 dp[i] = min(dp[i], 1 + dp[i - j*j]);
             }
         }
@@ -15,7 +15,7 @@ public:
         return dp[n];
     }
 };
-
+// 用下面static vector 提速
 //2.Static Dynamic Programming: 12ms
 /*
 class Solution 
@@ -52,6 +52,8 @@ public:
     }
 };
 
+
+//数学方法
 /*class Solution {  
 public:  
     int is_square(int n){  
@@ -71,39 +73,6 @@ public:
     }  
 };  
 */
-
-/*
-1.Dynamic Programming: 440ms
-
-class Solution 
-{
-public:
-    int numSquares(int n) 
-    {
-        if (n <= 0)
-        {
-            return 0;
-        }
-        
-        // cntPerfectSquares[i] = the least number of perfect square numbers 
-        // which sum to i. Note that cntPerfectSquares[0] is 0.
-        vector<int> cntPerfectSquares(n + 1, INT_MAX);
-        cntPerfectSquares[0] = 0;
-        for (int i = 1; i <= n; i++)
-        {
-            // For each i, it must be the sum of some number (i - j*j) and 
-            // a perfect square number (j*j).
-            for (int j = 1; j*j <= i; j++)
-            {
-                cntPerfectSquares[i] = 
-                    min(cntPerfectSquares[i], cntPerfectSquares[i - j*j] + 1);
-            }
-        }
-        
-        return cntPerfectSquares.back();
-    }
-}; */
-
 
 /*
 3.Mathematical Solution: 4ms
