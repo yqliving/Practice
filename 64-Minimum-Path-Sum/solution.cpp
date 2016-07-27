@@ -10,12 +10,13 @@ class Solution {
                 int top  = (i - 1) < 0 ? INT_MAX : grid[i-1][j];
                 int left = (j - 1) < 0 ? INT_MAX : grid[i][j-1];
                 if (top == INT_MAX && left == INT_MAX) continue;
-                grid[i][j] += top < left ? top : left;
+                grid[i][j] += min(top, left);
             }
         }
         return grid[lenR - 1][lenC - 1];
     }
 };
+
 
 /*2-d DP: Time ~ O(N^2), Space ~ O(M*N)
 Let d(i,  j) be the min path sum from grid[0,  0] (top left) to grid[i, j].
