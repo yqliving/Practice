@@ -3,26 +3,27 @@
 class Solution {
 public:
     int numDecodings(string s) {
-    if (!s.size() || s.front() == '0') return 0;
-    // r2: decode ways of s[i-2] , r1: decode ways of s[i-1] 
-    int r1 = 1, r2 = 1;
-    
-    for (int i = 1; i < s.size(); i++) {
-        // zero voids ways of the last because zero cannot be used separately
-        if (s[i] == '0') r1 = 0;
-
-        // possible two-digit letter, so new r1 is sum of both while new r2 is the old r1
-        if (s[i - 1] == '1' || s[i - 1] == '2' && s[i] <= '6') {
-            r1 = r2 + r1;
-            r2 = r1 - r2;
+        int len = s.size(), *ans = new int[len]();
+        for(int i=0; i<len; i++){
+            // Check one character
+            if('1'<=s[i] && s[i]<='9')              // 1 ~ 9
+                if(i==0) 
+                    ans[i] = 1;
+                else 
+                    ans[i] = ans[i-1];
+            // Check two characters
+            if((s[i-1]=='1' && ('0' <= s[i] && s[i] <= '9')) ||     // 10 ~ 19
+               (s[i-1]=='2' && ('0' <= s[i] && s[i] <= '6'))){      // 20 ~ 26
+                if(i>=2) 
+                    ans[i] += ans[i-2];
+                else 
+                    ans[i]++;
+            }
         }
-
-        // one-digit letter, no new way added
-        else {
-            r2 = r1;
-        }
+        return ans[len-1];
     }
-
-    return r1;
-}
 };
+
+/*每次对于当前的字符判断是否属于1-9（0肯定不行，因为0不在1-26中），如果属于，那么当前的字符可以被decode，并且和f[n-1]组合，f[n] += f[n-1]
+然后对于当前字符和前一个字符组成的字符串判断是否属于10-26，如果属于，那么这两个字符可以被decode，并且和f[n-2]组合，f[n] += f[n-2]
+*/
