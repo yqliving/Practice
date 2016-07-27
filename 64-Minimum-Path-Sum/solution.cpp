@@ -17,31 +17,10 @@ class Solution {
     }
 };
 
+/* 首先可以找出递推关系，比如设存放起点到每个格子 i，j 的最小路径和的二维数组为 MPS[i][j]，那么递推公式为：
 
-/*2-d DP: Time ~ O(N^2), Space ~ O(M*N)
-Let d(i,  j) be the min path sum from grid[0,  0] (top left) to grid[i, j].
-d(i, j) = min{d(i - 1, j), d(i, j - 1)} + grid[i, j];
-Return d(M - 1, N - 1).
-Use top-down approach.
+    MPS[i][j] = Min（MPS[i-1][j]，MPS[i][j-1]）+ val[i][j]；
+   
+    即格子 i，j 的MPS值可能有两个来源：其左侧格子 i，j-1 或者其上侧格子 i-1，j ；取这两个来源的较小MPS值，再加上当前格子的值 val[i][j] 即为结果。
 
-class Solution {
-public:
-    int minPathSum(vector<vector<int>> &grid) {
-        if (grid.empty()) return INT_MIN;
-        int M = grid.size(), N = grid[0].size();
-        int dp[N];
-        dp[0] = grid[0][0];
-        for (int i = 1; i < N; ++i)
-            dp[i] = grid[0][i] + dp[i-1];
-        
-        for (int i = 1; i < M; ++i)
-        {
-            dp[0] += grid[i][0];
-            for (int j = 1; j < N; ++j)
-                dp[j] = min(dp[j-1], dp[j]) + grid[i][j];
-        }
-        
-        return dp[N-1];
-    }
-};
-
+    设N为格子总数（N=m*n），上面的代码空间复杂度为O(N)，时间复杂度为O(N)
