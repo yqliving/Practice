@@ -12,7 +12,7 @@ public:
         {
             return 0;
         }
-        vector<int> dp(n+1, INT_MAX));
+        vector<int> dp(n+1, INT_MAX);
         // 将所有平方数的结果置1
         for(int i = 0; i * i <= n; i++){
             dp[i * i] = 1;
