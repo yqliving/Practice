@@ -9,7 +9,6 @@ public:
 	{
 		for (int i = coin; i <= amount; ++i)
 		{
-		//	int prev = i - coin;
 			if (dp[i - coin] != INT_MAX)
 			{
 				dp[i] = min(dp[i], dp[i - coin] + 1);
