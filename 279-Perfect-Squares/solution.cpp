@@ -30,58 +30,25 @@ public:
 };
 
 /*
-class Solution 
-{
-public:
-    int numSquares(int n) 
-    {
-        if (n <= 0)
-        {
-            return 0;
-        }
-        
-        // cntPerfectSquares[i] = the least number of perfect square numbers 
-        // which sum to i. Since cntPerfectSquares is a static vector, if 
-        // cntPerfectSquares.size() > n, we have already calculated the result 
-        // during previous function calls and we can just return the result now.
-        static vector<int> cntPerfectSquares({0});
-        
-        // While cntPerfectSquares.size() <= n, we need to incrementally 
-        // calculate the next result until we get the result for n.
-        while (cntPerfectSquares.size() <= n)
-        {
-            int m = cntPerfectSquares.size();
-            int cntSquares = INT_MAX;
-            for (int i = 1; i*i <= m; i++)
-            {
-                cntSquares = min(cntSquares, cntPerfectSquares[m - i*i] + 1);
-            }
-            
-            cntPerfectSquares.push_back(cntSquares);
-        }
-        
-        return cntPerfectSquares[n];
-    }
-};
 //思路相同
-/*class Solution {
-public:
-    int numSquares(int n) {
-        if (n == 0) return 0;
-        
-        vector<int> dp(n+1, 0);
-        
-        for (int i=0; i<=n; ++i) {
-            dp[i] = i;
-            for (int j = 2; j*j<=i; ++j) {
-                dp[i] = min(dp[i], 1 + dp[i - j*j]);
+/*public class Solution {
+    public int numSquares(int n) {
+        vector<int> dp(n+1, INT_MAX);
+        // 将所有平方数的结果置1
+        for(int i = 0; i * i <= n; i++){
+            dp[i * i] = 1;
+        }
+        // 从小到大找任意数a
+        for(int a = 0; a <= n; a++){
+            // 从小到大找平方数bｘb
+            for(int b = 0; a + b * b <= n; b++){
+                // 因为a+b*b可能本身就是平方数，所以我们要取两个中较小的
+                dp[a + b * b] = Math.min(dp[a] + 1, dp[a + b * b]);
             }
         }
-        
         return dp[n];
     }
-};
-
+}
 
 //数学方法========================================
 /*class Solution {  
