@@ -1,8 +1,8 @@
 class Solution {
 public:
     int maxProfit(vector<int> &prices) {
-        if (prices.size() < 2) return 0;
-        int curMin = prices[0];
+        //if (prices.size() < 2) return 0;
+        int curMin = INT_MAX;
         int maxValue = 0;
         
         for (int i = 0; i < prices.size(); i++) {
