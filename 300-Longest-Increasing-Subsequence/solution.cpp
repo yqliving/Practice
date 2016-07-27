@@ -1,4 +1,5 @@
-//dynamic programming
+//dynamic programming O(n^2)
+//我们的递推关系就隐约出来了，假设dp[i]代表加入第i个数能构成的最长升序序列长度，我们就是要在dp[0]到dp[i-1]中找到一个最长的升序序列长度，又保证序列尾值nums[j]小于nums[i]，然后把这个长度加上1就行了。同时，我们还要及时更新最大长度。
 class Solution {
 public:
 int lengthOfLIS(vector<int>& nums) {
@@ -20,6 +21,7 @@ int lengthOfLIS(vector<int>& nums) {
 }
 };
 
+//O(nlogn)
 //lower_bound
 /*
 class Solution {
