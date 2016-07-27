@@ -7,6 +7,7 @@ class Solution {
     public:
     int maxProfit(vector<int>& prices) {
         int len = prices.size();
+        if (len < 2) return 0;
         vector<int> pre, post;
         
         int curMin = INT_MAX;
