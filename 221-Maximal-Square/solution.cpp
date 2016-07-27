@@ -6,7 +6,7 @@ public:
         int lenR = matrix.size();
         int lenC = matrix[0].size();
         
-        vector<vector<int>> D;
+        vector<vector<int>> D(lenR, vector<int>(lenC));
         int maxVal = 0;
         
         for (int i = 0; i < lenR; i++) {
