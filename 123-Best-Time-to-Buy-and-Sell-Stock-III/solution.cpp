@@ -8,14 +8,14 @@ class Solution {
     int maxProfit(vector<int>& prices) {
         int len = prices.size();
         if (len < 2) return 0;
-        vector<int> pre, post;
+        vector<int> pre(len), post(len);
         
-        int curMin = INT_MAX;
+        int curMin = prices[0];
         for (int i = 1; i < len; i++) {
             curMin = min(curMin, prices[i]);
             pre[i] = max(pre[i - 1], prices[i] - curMin);
         }
-        int curMax = INT_MIN;
+        int curMax = prices[len - 1];
         for (int j = len - 2; j >= 0; j--) {
             curMax = max(curMax, prices[j]);
             post[j] = max(post[ j + 1], curMax - prices[j]);
@@ -30,8 +30,26 @@ class Solution {
     }
     
 };
-
-
+/*
+class Solution {
+public:
+int maxProfit(vector<int>& prices) {
+    int n = prices.size();
+    if(n == 0) return 0;
+    vector<int> min_p(n), max_p(n);
+    min_p[0] = prices[0];
+    for(int i = 1; i < n; i ++) min_p[i] = min(min_p[i-1], prices[i]);
+    max_p[n-1] = prices[n-1];
+    for(int i = n - 2; i >= 0; i --) max_p[i] = max(max_p[i+1], prices[i]);
+    
+    int ret = 0;
+    int tmp = 0;
+    for(int i = 0; i < n; i ++){
+        tmp = max(tmp, prices[i] - min_p[i]);
+        ret = max(ret, tmp + max_p[i] - prices[i]);
+    }
+    return ret;
+}
 /*It is similar to other buy/sell problems. just do DP and define an array of states to track the current maximum profits at different stages. For example, in the below code
 
 states[][0]: one buy
