@@ -16,3 +16,6 @@ class Solution {
 
 
 /*O(1)space,O(N)time
+已知0,..,k的最大和以后，0,...k+1的最大和为：
+1）若sum[k]>=0,sum[k+1]=sum[k]+A[k+1]。
+2）若sum[k]<0,sum[k+1]=A[k+1]。
