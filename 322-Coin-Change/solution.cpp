@@ -2,22 +2,22 @@ class Solution {
 public:
     int coinChange(vector<int>& coins, int amount)
 {
-	vector<int> amountToNumCoins(amount + 1, INT_MAX);
-	amountToNumCoins[0] = 0;
+	vector<int> dp(amount + 1, INT_MAX);
+	dpCoins[0] = 0;
 
 	for (int coin : coins)
 	{
 		for (int i = coin; i <= amount; ++i)
 		{
-			int prev = i - coin;
-			if (amountToNumCoins[prev] != INT_MAX)
+		//	int prev = i - coin;
+			if (dp[i - coin] != INT_MAX)
 			{
-				amountToNumCoins[i] = min(amountToNumCoins[i], amountToNumCoins[prev] + 1);
+				dp[i] = min(dp[i], dp[i - coin] + 1);
 			}
 		}
 	}
 
-	return (amountToNumCoins[amount] == INT_MAX) ? -1 : amountToNumCoins[amount];
+	return (dp[amount] == INT_MAX) ? -1 : dp[amount];
 }
 };
 
