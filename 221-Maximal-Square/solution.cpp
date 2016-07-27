@@ -30,38 +30,3 @@ public:
     }
 };
 
-/*
-class Solution {
-public:
-    int maximalSquare(vector<vector<char>>& matrix) {
-        if (matrix.empty()) return 0;
-        int lenR = matrix.size();
-        int lenC = matrix[0].size();
-        
-        vector<vector<int>> D(lenR, vector<int>(lenC));  //注意初始化的形式，不能写成D（lenR，lenC）
-        int maxVal = 0;
-        
-        for (int i = 0; i < lenR; i++) {
-            if (matrix[i][0] == '1') {
-                D[i][0] = 1;
-                maxVal = 1;
-            }
-        }
-        for (int j = 0; j < lenC; j++) {
-            if (matrix[0][j] == '1') {
-                D[0][j] = 1;
-                maxVal = 1;
-            }
-        }
-        for (int i = 1; i < lenR; i ++) {
-            for (int j = 1; j < lenC; j ++) {
-                if (matrix[i][j] == '0') D[i][j] = 0;
-                else {
-                    D[i][j] = min(min(D[i-1][j], D[i][j-1]), D[i-1][j-1]) + 1;
-                    maxVal = max(maxVal, D[i][j]);
-                }
-            }
-        }
-        return maxVal*maxVal;
-    }
-};/*
