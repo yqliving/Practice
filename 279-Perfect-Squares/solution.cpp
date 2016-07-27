@@ -1,4 +1,4 @@
-class Solution {  
+/*class Solution {  
 public:  
     int is_square(int n){  
         int temp = (int) sqrt(n);  
@@ -16,7 +16,7 @@ public:
         return 3;  
     }  
 };  
-
+*/
 
 /*
 1.Dynamic Programming: 440ms
@@ -48,8 +48,9 @@ public:
         
         return cntPerfectSquares.back();
     }
-};
-2.Static Dynamic Programming: 12ms
+}; */
+
+//2.Static Dynamic Programming: 12ms
 
 class Solution 
 {
@@ -84,6 +85,7 @@ public:
         return cntPerfectSquares[n];
     }
 };
+/*
 3.Mathematical Solution: 4ms
 
 class Solution 
