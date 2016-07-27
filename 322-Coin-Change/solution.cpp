@@ -3,7 +3,7 @@ public:
     int coinChange(vector<int>& coins, int amount)
 {
 	vector<int> dp(amount + 1, INT_MAX);
-	dpCoins[0] = 0;
+	dp[0] = 0;
 
 	for (int coin : coins)
 	{
