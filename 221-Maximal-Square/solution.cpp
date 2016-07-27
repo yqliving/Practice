@@ -2,15 +2,9 @@
 
 class Solution {
 public:
-    inline int min(int x, int y) {
-        return x<y? x:y;
-    }
-    inline int min(int x, int y, int z) {
-        return min(x, min(y, z));
-    }
     int maximalSquare(vector<vector<char>>& matrix) {
+        if (matrix.empty()) return 0;
         int row = matrix.size();
-        if (row <=0) return 0;
         int col = matrix[0].size();
         
         int maxSize = 0;
@@ -32,7 +26,6 @@ public:
                
             }
         }
-        
         return maxSize*maxSize;
     }
 };
