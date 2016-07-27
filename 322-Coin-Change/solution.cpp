@@ -17,7 +17,7 @@ public:
 		}
 	}
 
-	return (amountToNumCoins[amount] == noWay) ? -1 : amountToNumCoins[amount];
+	return (amountToNumCoins[amount] == INT_MAX) ? -1 : amountToNumCoins[amount];
 }
 };
 
