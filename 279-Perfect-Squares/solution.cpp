@@ -1,23 +1,6 @@
-class Solution {
-public:
-    int numSquares(int n) {
-        if (n == 0) return 0;
-        
-        vector<int> dp(n+1, 0);
-        
-        for (int i=0; i<=n; ++i) {
-            dp[i] = i;
-            for (int j = 2; j*j<=i; ++j) {
-                dp[i] = min(dp[i], 1 + dp[i - j*j]);
-            }
-        }
-        
-        return dp[n];
-    }
-};
+
 // 用下面static vector 提速
 //2.Static Dynamic Programming: 12ms
-/*
 class Solution 
 {
 public:
@@ -51,9 +34,27 @@ public:
         return cntPerfectSquares[n];
     }
 };
+//思路相同
+/*class Solution {
+public:
+    int numSquares(int n) {
+        if (n == 0) return 0;
+        
+        vector<int> dp(n+1, 0);
+        
+        for (int i=0; i<=n; ++i) {
+            dp[i] = i;
+            for (int j = 2; j*j<=i; ++j) {
+                dp[i] = min(dp[i], 1 + dp[i - j*j]);
+            }
+        }
+        
+        return dp[n];
+    }
+};
 
 
-//数学方法
+//数学方法========================================
 /*class Solution {  
 public:  
     int is_square(int n){  
