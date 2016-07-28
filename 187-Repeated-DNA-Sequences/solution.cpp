@@ -53,7 +53,7 @@ public:
        {
            if (map[h] == 1)
            {
-               v.push_back(t);
+               v.push_back(t);  // v.insert(v.end(), t);
            }
            
             map[h]++;
