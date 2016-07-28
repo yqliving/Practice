@@ -37,6 +37,6 @@ public:
                 total += tank;
                 tank=0;
             }
-        return (total+tank<0) ? -1 : start;
+        return (total + tank < 0) ? -1 : start;
     }
 };
