@@ -10,7 +10,7 @@ class Solution {
         unordered_map<int, int> map1;
         for (int num : nums1) map1[num]++;
         
-        for (int num : num2) {
+        for (int num : nums2) {
             if (map1.find(num) != map1.end() && map1[num] > 0) {
                 ret.push_back(num);
                 map1[num]--;
