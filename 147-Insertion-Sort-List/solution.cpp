@@ -43,7 +43,7 @@ public:
 class Solution {
 public:
     ListNode *insertionSortList(ListNode *head) {
-        ListNode *sortedHead = new ListNode(-1);
+        ListNode *sortedHead = new ListNode(0);
         while(head != NULL)
         {
             //保存head位置
