@@ -8,7 +8,8 @@ class Solution {
             return reach+1>=n;
         }
     };
-    
+ // 记录每一步最远能到达的位置
+ 
     /*
     class Solution {
 public:
