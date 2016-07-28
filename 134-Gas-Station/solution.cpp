@@ -24,6 +24,7 @@ can not reach B.(B is the first station that A can not reach.)
 If the total number of gas is bigger than the total number of cost. There must be a solution.
 (Should I prove them?)
 Here is my solution based on those ideas:
+// 相当于找最大子序列
 */
 class Solution {
 public:
@@ -32,10 +33,10 @@ public:
         //if car fails at 'start', record the next station
         for(int i=0;i<gas.size();i++) 
             if((tank=tank+gas[i]-cost[i])<0) {
-                start=i+1;
-                total+=tank;
+                start = i+1;
+                total += tank;
                 tank=0;
             }
-        return (total+tank<0)? -1:start;
+        return (total+tank<0) ? -1 : start;
     }
 };
