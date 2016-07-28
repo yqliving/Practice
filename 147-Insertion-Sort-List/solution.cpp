@@ -14,7 +14,7 @@ Start from the second element (simply a[1] in array and the annoying head -> nex
 
 Now comes the code:*/
 
-class Solution { 
+/*class Solution { 
 public:
     ListNode* insertionSortList(ListNode* head) {
         ListNode* new_head = new ListNode(0);
@@ -25,12 +25,12 @@ public:
             if (cur -> next && cur -> next -> val < cur -> val) {
                 while (pre -> next && pre -> next -> val < cur -> next -> val)
                     pre = pre -> next;
-                /* Insert cur -> next after pre.*/
+                // Insert cur -> next after pre.
                 ListNode* temp = pre -> next;
                 pre -> next = cur -> next;
                 cur -> next = cur -> next -> next;
                 pre -> next -> next = temp;
-                /* Move pre back to new_head. */
+                // Move pre back to new_head. 
                 pre = new_head;
             }
             else cur = cur -> next;
@@ -39,8 +39,8 @@ public:
         delete new_head;
         return res;
     }
-};
-/*class Solution {
+};*/
+class Solution {
 public:
     ListNode *insertionSortList(ListNode *head) {
         ListNode *sortedHead = new ListNode(-1);
@@ -63,53 +63,3 @@ public:
     }
 };
 
-
- /*
- class Solution{
-     public:
- 
-ListNode* insertionSortList(ListNode* head) {
-    return helper(head,nullptr);
-}
-
-ListNode* helper(ListNode* head,ListNode*end){
-    if(head==end  || head->next == end){
-        head ?head->next = nullptr:head;
-        return head;
-    }
-    ListNode* slow  = head;
-    ListNode* fast  = head;
-    while(fast!=end && fast->next!=end){
-        slow = slow->next;
-        fast = fast->next->next;
-    }
-    ListNode* left = helper(head,slow);
-    ListNode* right = helper(slow,end);
-    return merge(left,right);
-}
-
-ListNode* merge(ListNode* left,ListNode* right){
-    ListNode* head;
-    if(left->val > right->val){
-        head = right;
-        right = right->next;
-    }else{
-        head = left;
-        left = left->next;
-    }
-    ListNode* tail = head;
-    while(right && left){
-        if(left->val > right->val){
-            tail -> next = right;
-            right = right->next;
-        }else{
-            tail -> next = left;
-            left = left->next;
-        }
-        tail = tail->next;
-        tail->next = nullptr;
-    }
-    right? tail->next = right:tail->next = left;
-    return head;
-}
-};
