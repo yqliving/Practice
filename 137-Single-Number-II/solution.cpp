@@ -1,4 +1,4 @@
-/*class Solution {
+class Solution {
 public:
     int singleNumber(vector<int>& nums) {
     int ones = 0, twos = 0;
@@ -9,7 +9,7 @@ public:
     return ones;
         
     }
-};*/
+};
 // 8ms
 
 //=======================
@@ -49,7 +49,7 @@ so for ab both
 00 => 0
 we should return a|b;
 this is the key idea , we can design any based counter and find the occurs any times except one .
-here is my code. with comment.*/
+here is my code. with comment.
 
 class Solution {
     
