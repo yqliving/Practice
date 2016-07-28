@@ -14,3 +14,5 @@ public:
         return result[target];
     }
 };
+// 状态转移方程：dp[x + y] += dp[x].
+// 其中dp[x]表示生成数字x的所有可能的组合方式的个数。
