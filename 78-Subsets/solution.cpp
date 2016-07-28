@@ -1,3 +1,5 @@
+// 非常重要！！！！！！！！！！！！！！！！！！
+
 /*Recursive (Backtracking)
 
 This is a typical problem that can be tackled by backtracking. Since backtracking has a more-or-less similar template, so I do not give explanations for this method.*/
@@ -78,4 +80,5 @@ public:
         return res;  
     }
 };
+// & 1 最后一位进行与运算，所以可以区分奇偶数
 **/
