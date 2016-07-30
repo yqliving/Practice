@@ -1,24 +1,25 @@
 //递归
 class Solution {
-public:
+    public:
     vector<string> letterCombinations(string digits) {
-        vector<string> keyboard {" ","","abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        vector<string> keyboard{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         vector<string> res;
         string s;
-        if (digits.size()==0) return res;
-        letterCombinationsRe(keyboard,digits,s,res);
+        if (digits.size() == 0) return res;
+        Combine(keyboard, digits, s, res);
         return res;
     }
-    void letterCombinationsRe(vector<string> &keyboard, string &digits, string &s, vector<string>&res){
-        if(s.size() == digits.size()){
+    
+    void Combine(vector<string>& keyboard, string & digits, string & s, vector<string>& res) {
+        if (s.size() == digits.size()) {
             res.push_back(s);
             return;
         }
-        string &letters = keyboard[digits[s.size()]-'0'];
-        for(int i = 0; i < letters.size(); ++i){
+        string letters = keyboard[digits[digits[s.size()] - '0'];
+        for (int i = 0; i < letters.size(); i ++) {
             s.push_back(letters[i]);
-            letterCombinationsRe(keyboard, digits,s,res);
-            s.pop_back();
+            Combine(keyboard, digits, s, res);
+            s.pop_back;
         }
     }
 };
