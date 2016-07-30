@@ -12,8 +12,7 @@ class Solution {
             res.push_back(cur);
             return;
         }
-            
-            for (int i = start; i < candidates.size() && candidates[i] <= target; i ++) {
+        for (int i = start; i < candidates.size() && candidates[i] <= target; i ++) {
                 cur.push_back(candidates[i]);
                 help (candidates, target - candidates[i], i, res, cur);
                 cur.pop_back();
