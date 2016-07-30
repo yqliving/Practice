@@ -1,5 +1,13 @@
 class Solution {
 public:
+vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+    sort(nums.begin(),nums.end());
+    vector<vector<int>> res;
+    vector<int> pre;
+    dfs(res,pre,nums,0);
+    return res;
+}
+
 void dfs(vector<vector<int>> &res, vector<int>& pre, vector<int>&nums, int start){
         res.push_back(pre);   // for empty set;
         
@@ -10,16 +18,9 @@ void dfs(vector<vector<int>> &res, vector<int>& pre, vector<int>&nums, int start
             while (nums[i] == nums[i + 1]) ++i;
         }
     }
-}
-vector<vector<int>> subsetsWithDup(vector<int>& nums) {
-    sort(nums.begin(),nums.end());
-    vector<vector<int>> res;
-    vector<int> pre;
-    res.push_back(pre);   // for empty set;
-    dfs(res,pre,nums,0);
-    return res;
-}
 };
+
+
 
 /*class Solution {
 public:
