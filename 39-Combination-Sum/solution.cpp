@@ -10,7 +10,7 @@ class Solution {
     void help(vector<int>& candidates, int target, int start, vector<vector<int>>& res, vector<int>& cur) {
         if (target == 0) {
             res.push_back(cur);
-            return;
+            //return;
         }
         for (int i = start; i < candidates.size() && candidates[i] <= target; i ++) {
                 cur.push_back(candidates[i]);
