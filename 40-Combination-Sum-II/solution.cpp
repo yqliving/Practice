@@ -13,11 +13,12 @@ class Solution {
             return;
         }
         for (int i = start; i < candidates.size() && candidates[i] <= target; i ++) {
-            if (i != start && candidates[i] == nums[i-1]) continue;
+            if (i != start && candidates[i] == candidates[i-1]) continue;
                 cur.push_back(candidates[i]);
-                help (candidates, target - candidates[i], i, res, cur);
+                help (candidates, target - candidates[i], i+1, res, cur);
                 cur.pop_back();
             }
     }
 };
+
 
