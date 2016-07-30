@@ -28,6 +28,12 @@ Given **board** =
 
 <div>
 
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
+
+<span class="hidebutton">[Bloomberg](/company/bloomberg/) [Facebook](/company/facebook/) [Microsoft](/company/microsoft/)</span></div>
+
+<div>
+
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Array](/tag/array/) [Backtracking](/tag/backtracking/)</span></div>
