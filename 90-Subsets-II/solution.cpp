@@ -1,10 +1,8 @@
 class Solution {
 public:
 void dfs(vector<vector<int>> &res, vector<int>& pre, vector<int>&nums, int start){
-    if (start>=nums.size()) {
         res.push_back(pre);   // for empty set;
-        return;
-    }
+        
     for (int i=start;i<nums.size();i++){
             pre.push_back(nums[i]);
             dfs(res,pre,nums,i+1);
