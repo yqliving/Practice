@@ -13,9 +13,9 @@ class Solution {
             return;
         }
         for (int i = start; i < candidates.size() && candidates[i] <= target; i ++) {
-            if (i != start && candidates[i] == candidates[i-1]) continue;
+            if (i != start && candidates[i] == candidates[i-1]) continue; // this line ensures no duplicate
                 cur.push_back(candidates[i]);
-                help (candidates, target - candidates[i], i+1, res, cur);
+                help (candidates, target - candidates[i], i+1, res, cur); // should be i+1
                 cur.pop_back();
             }
     }
