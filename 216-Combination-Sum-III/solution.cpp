@@ -15,10 +15,9 @@ class Solution {
         if (start > 9 || start > n) return;
         for (int i = start; i < 10; i++) {
         temp.push_back(i);    //i 不是 start
-        dfs(res, temp, i+1, k - 1, n - i);
-        //dfs (res, temp, start + 1, k - 1, n - start);
+        dfs(res, temp, i+1, k - 1, n - i);      
+           //这是i+1， 如果是i，结果是：[[1,1,5],[1,2,4],[1,3,3],[2,2,3]]
         temp.pop_back();
-        //dfs (res, temp, start + 1, k, n);
         }
     }
 };
