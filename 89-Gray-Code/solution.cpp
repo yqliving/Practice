@@ -16,6 +16,7 @@ class Solution {
             return vector<int>{0};
         }
         vector<int> pre = grayCode(n - 1);
+        
         vector<int> ans(pow(2, n));
         for(int i = 0; i < pre.size(); ++i){
             int tmp = pre[i];
