@@ -15,7 +15,7 @@ class Solution {
             res.push_back(s);
             return;
         }
-        string letters = keyboard[digits[digits[s.size()] - '0'];
+        string letters = keyboard[[digits[s.size()] - '0'];
         for (int i = 0; i < letters.size(); i ++) {
             s.push_back(letters[i]);
             Combine(keyboard, digits, s, res);
