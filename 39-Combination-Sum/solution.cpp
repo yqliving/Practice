@@ -8,6 +8,7 @@ class Solution {
         return res;
     }
     void help(vector<int>& candidates, int target, int start, vector<vector<int>>& res, vector<int>& cur) {
+        // 不能在这初始化定义cur， 这样cur一直为空
         if (target == 0) {
             res.push_back(cur);
             return;
