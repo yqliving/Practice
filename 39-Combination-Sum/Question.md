@@ -42,4 +42,4 @@ A solution set is:
 
 <div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
 
-<span class="hidebutton">[(M) Letter Combinations of a Phone Number](/problems/letter-combinations-of-a-phone-number/) [(M) Combination Sum II](/problems/combination-sum-ii/) [(M) Combinations](/problems/combinations/) [(M) Combination Sum III](/problems/combination-sum-iii/) [(M) Factor Combinations](/problems/factor-combinations/)</span></div>
+<span class="hidebutton">[(M) Letter Combinations of a Phone Number](/problems/letter-combinations-of-a-phone-number/) [(M) Combination Sum II](/problems/combination-sum-ii/) [(M) Combinations](/problems/combinations/) [(M) Combination Sum III](/problems/combination-sum-iii/) [(M) Factor Combinations](/problems/factor-combinations/) [(M) Combination Sum IV](/problems/combination-sum-iv/)</span></div>
