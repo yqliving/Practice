@@ -19,8 +19,7 @@ class Solution {
             vector<int> left = inorderTraversal(root->left);
             left.push_back(root->val);
             vector<int> right = inorderTraversal(root->right);
-            left.push_back(right);
-            //left.insert(left.end(), right.begin(), right.end());
+            left.insert(left.end(), right.begin(), right.end()); // wrong left.push_back(right)
             return left;
         }
     };
