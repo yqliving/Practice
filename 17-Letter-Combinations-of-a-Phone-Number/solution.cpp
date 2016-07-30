@@ -19,7 +19,7 @@ class Solution {
         for (int i = 0; i < letters.size(); i ++) {
             s.push_back(letters[i]);
             Combine(keyboard, digits, s, res);
-            s.pop_back;
+            s.pop_back();
         }
     }
 };
