@@ -12,9 +12,9 @@ class Solution {
             res.push_back(temp);
             return;
         }
-        //if (start > 9 || start > n) return;
-        for (int i = start; i < min(n - i, 10) || (k == 1 && i < 10); i++) {
-        temp.push_back(i);
+        if (start > 9 || start > n) return;
+        for (int i = start; i < 10); i++) {
+        temp.push_back(i);    //i 不是 start
         dfs(res, temp, i+1, k - 1, n - i);
         //dfs (res, temp, start + 1, k - 1, n - start);
         temp.pop_back();
