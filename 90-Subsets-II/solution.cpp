@@ -15,7 +15,7 @@ void dfs(vector<vector<int>> &res, vector<int>& pre, vector<int>&nums, int start
             pre.push_back(nums[i]);
             dfs(res,pre,nums,i+1);
             pre.pop_back();
-            while (nums[i] == nums[i + 1]) ++i;
+            while (nums[i] == nums[i + 1]) ++i;  // !!!!!!!
         }
     }
 };
