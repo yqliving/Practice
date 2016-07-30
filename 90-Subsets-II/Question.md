@@ -27,6 +27,12 @@ If **_nums_** = `[1,2,2]`, a solution is:
 
 <div>
 
+<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
+
+<span class="hidebutton">[Facebook](/company/facebook/)</span></div>
+
+<div>
+
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Array](/tag/array/) [Backtracking](/tag/backtracking/)</span></div>
