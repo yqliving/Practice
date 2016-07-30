@@ -23,12 +23,6 @@ For example, given _n_ = 3, a solution set is:
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
-
-<span class="hidebutton">[Google](/company/google/) [Uber](/company/uber/) [Zenefits](/company/zenefits/)</span></div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Backtracking](/tag/backtracking/) [String](/tag/string/)</span></div>
