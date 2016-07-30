@@ -1,7 +1,7 @@
 class Solution {
     public:
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-        sort(candidates.begin(), candidate.end());
+        sort(candidates.begin(), candidates.end());
         vector<vector<int>> res;
         help (candidates, target, 0);
         return res;
