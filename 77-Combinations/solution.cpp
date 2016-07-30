@@ -7,7 +7,7 @@ public:
         vector<int> cur;
         recur(n, k, 1, res, cur);
 
-        return ret;
+        return res;
     }
 
     void recur(int n, int k, int start, vector<vector<int>> &res, vector<int> &cur) {
