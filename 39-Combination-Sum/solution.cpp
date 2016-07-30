@@ -18,7 +18,6 @@ class Solution {
             }
         }
     }
-}
 };
 //recurrion
 
