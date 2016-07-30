@@ -1,13 +1,15 @@
 class Solution {
 public:
-void dfs(vector<vector<int>> &res, vector<int>& pre, vector<int>&nums, int k){
-    if (k>=nums.size()) return;
-    for (int i=k;i<nums.size();i++){
-        if (nums[i]!=nums[i-1] || i==k){
+void dfs(vector<vector<int>> &res, vector<int>& pre, vector<int>&nums, int start){
+    if (start>=nums.size()) {
+        res.push_back(pre);   // for empty set;
+        return;
+    }
+    for (int i=start;i<nums.size();i++){
             pre.push_back(nums[i]);
-            res.push_back(pre);   // for empty set;
             dfs(res,pre,nums,i+1);
             pre.pop_back();
+            while (nums[i] == nums[i + 1]) ++i;
         }
     }
 }
