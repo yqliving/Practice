@@ -11,9 +11,9 @@
     TreeNode* CreateSection(vector<int>& nums,int l,int r){
         if(l>r) return NULL;
         int c = (l+r+1)/2;
-        TreeNode *root = new TreeNode(nums[c]);
+        TreeNode *root = new TreeNode(nums[c]);  //不断取中间做root
         root->left = CreateSection(nums,l,c-1);
-        root->right = CreateSection(nums,c,r);
+        root->right = CreateSection(nums,c+1,r);
         return root;
     }
 public:
