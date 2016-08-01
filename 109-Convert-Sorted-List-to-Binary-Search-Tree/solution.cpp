@@ -35,7 +35,7 @@ class Solution {
         int mid = start + (end - start) / 2;
         root->left = sortedList(head, start, mid);
         root->val = (*head)->val;
-        *head = *head->next;
+        *head = (*head)->next;
         root->right = sortedList(head, mid + 1, end);
         return root;
     }
