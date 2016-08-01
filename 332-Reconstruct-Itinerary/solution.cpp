@@ -13,7 +13,7 @@ class Solution {
             return ans;
         }
     private:
-        void dfs(string u, vector<string> &ans, int dep, int tot){
+        void dfs(string u, vector<string> &ans, int & dep, int & tot){
             while(g[u].size()){
                 string v = *g[u].begin();
                 g[u].erase(g[u].begin());
