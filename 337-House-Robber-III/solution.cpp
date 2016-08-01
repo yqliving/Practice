@@ -14,7 +14,7 @@ class Solution {
         return tryRob (root, l, r);
     }
     
-        int tryRob(TreeNode* root, int & l, int & r) {
+    int tryRob(TreeNode* root, int & l, int & r) {
             if (!root) return 0;
             
             int ll = lr = rl = rr = 0;
@@ -22,7 +22,6 @@ class Solution {
             r = tryRob(root -> right, rl, rr);
             
             return max(root->val + ll + lr + rl + rr, l + r);
-        }
     }
 };
 
