@@ -17,7 +17,7 @@ class Solution {
     int tryRob(TreeNode* root, int & l, int & r) {
             if (!root) return 0;
             
-            int ll = lr = rl = rr = 0;
+            int ll = 0, lr = 0, rl = 0, rr = 0;
             l = tryRob(root -> left, ll, lr);
             r = tryRob(root -> right, rl, rr);
             
