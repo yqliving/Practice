@@ -12,7 +12,7 @@ public:
     vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
         vector<vector<int>> res;
         traverse(root, 0, res);
-        return rst;
+        return res;
     }
     
 void traverse(TreeNode* root, int depth, vector<vector<int>> & res) {
@@ -25,7 +25,7 @@ void traverse(TreeNode* root, int depth, vector<vector<int>> & res) {
     if (depth % 2 == 0)   
         res[depth].push_back(root ->val);
     else{
-        res[depth].insert(res[depth].begin(), root -> val);    // two situation
+        res[depth].insert(res[depth].begin(), root -> val);    // two situations
     }
     traverse(root -> left, depth + 1, res);  
     traverse(root -> right, depth + 1, res);
