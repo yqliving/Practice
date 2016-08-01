@@ -7,17 +7,37 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-
 class Solution {
-private: TreeNode* prev = NULL;
+public:
+    void flatten(TreeNode* root) {
+        if (root == nullptr)  return;
+        TreeNode* left = root->left;
+        TreeNode* right = root->right;
+        root->left = nullptr;
+        flatten(left);
+        flatten(right);
+        root->right = left;
+        TreeNode* cur = root;
+        while (cur->right) cur = cur->right;
+        cur->right = right;
+    }
+};
 
-public: void flatten(TreeNode* root) {
-    if (root == NULL)
-        return;
-    flatten(root->right);
-    flatten(root->left);
-    root->right = prev;
-    root->left = NULL;
-    prev = root;
-}
+/*
+class Solution {
+private:
+    //let the prev pointer point to the traversal returned first node
+    //our traversal order is : right -> left -> root
+    //the prev will point to the last node visited after visiting left subtree and right subtree
+    TreeNode* prev = nullptr;
+public:
+    void flatten(TreeNode* root) {
+        if (root == nullptr)
+            return;
+        flatten(root->right);
+        flatten(root->left);
+        root->right = prev;
+        root->left = nullptr;
+        prev = root;
+    }
 };
