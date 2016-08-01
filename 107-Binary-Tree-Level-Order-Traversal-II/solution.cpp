@@ -5,7 +5,7 @@ public:
     
     vector<vector<int>> levelOrderBottom(TreeNode* root) {
         Build(root,0);
-        reverse(rst.begin(),res.end());
+        reverse(res.begin(),res.end());
         return rst;
     }
     
