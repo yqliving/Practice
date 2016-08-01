@@ -9,13 +9,13 @@
  */
 class Solution {
     public:
-    int sumNumers(TreeNode* root) {
+    int sumNumbers(TreeNode* root) {
         int res = 0;
         dfs(root, res, 0);
         return res;
     }
     
-    void dfs(TreeNode* node, int res, int cur) {
+    void dfs(TreeNode* node, int &res, int cur) {
         if (!node) return;
         cur = cur * 10 + node->val;
         if (!node->left && !node->right) {
