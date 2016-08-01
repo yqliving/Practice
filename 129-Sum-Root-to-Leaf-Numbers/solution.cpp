@@ -10,7 +10,7 @@
 class Solution {
 
 private:
-    void dfs(TreeNode* node, int &res, int cur)
+    void dfs(TreeNode* node, int &res, int cur)   //如果是 int res，返回0，加上& 结果正确
     {
         if(!node) return; //if it is an empty node, return
         cur = cur*10+node->val; // update the current value from root to the current node 
