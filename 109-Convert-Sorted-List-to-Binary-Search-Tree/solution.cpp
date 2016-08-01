@@ -15,36 +15,32 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-class Solution 
-{
-private:
-    TreeNode* sortedListToBSTR(ListNode** head, int start, int end) 
-    {   
-        if(start==end)
-        return nullptr;
-        
-        if(head == NULL) return NULL;
-        TreeNode* root = new TreeNode(0);
-        int mid = start + (end - start) / 2;
-        root->left = sortedListToBSTR(head, start, mid);
-        root->val = (*head)->val;
-        *head = (*head)->next;
-        root->right = sortedListToBSTR(head, mid + 1, end);
-        return root;
-    }
-public:
-    TreeNode* sortedListToBST(ListNode* head) 
-    {
+class Solution {
+    public:
+    TreeNode* sortedListToBST(ListNode* head) {
         int len = 0;
         ListNode* current = head;
-        while(current)
-        {
-            ++len;
+        while (current) {
+            len ++;
             current = current->next;
         }
-        return sortedListToBSTR(&head, 0, len);
+        return sortedList(&head, 0, len);
+    }
+    
+    private:
+    TreeNode* sortedList(ListNode** head, int start, int end) {
+        if (start == end) return NULL;
+        if (head == NULL) return NULL;
+        TreeNode* root = new TreeNode(0);
+        int mid = start + (end - start) / 2;
+        root->left = sortedList(head, start, mid);
+        root->val = (*head)->val;
+        *head = *head->next;
+        root->right = sortedList(head, mid + 1, end);
+        return root;
     }
 };
+
 //将数组逐次二分 midpoint就是当前的根 然后左边的数组就是左子树 右边的数组就是右子树
 
 
