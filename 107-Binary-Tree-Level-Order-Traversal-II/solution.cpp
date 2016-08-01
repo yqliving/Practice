@@ -6,7 +6,7 @@ public:
     vector<vector<int>> levelOrderBottom(TreeNode* root) {
         Build(root,0);
         reverse(res.begin(),res.end());
-        return rst;
+        return res;
     }
     
     void Build(TreeNode* root,int layer){
