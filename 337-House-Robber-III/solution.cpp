@@ -12,7 +12,8 @@ class Solution {
     int rob(TreeNode* root) {
         int l, r;
         return tryRob (root, l, r);
-        
+    }
+    
         int tryRob(TreeNode* root, int & l, int & r) {
             if (!root) return 0;
             
