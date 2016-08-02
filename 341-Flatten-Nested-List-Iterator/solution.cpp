@@ -15,85 +15,38 @@
  *     const vector<NestedInteger> &getList() const;
  * };
  */
-
 class NestedIterator {
 public:
-    stack<pair<vector<NestedInteger>*, int> > s;  
-    //嵌套类（Nested Class）是在类中定义的类。以下把拥有内嵌类的类称为外部类。
-    vector<NestedInteger>* v;
-    int i;
     NestedIterator(vector<NestedInteger> &nestedList) {
-        i = 0;
-        v = &nestedList;
+        for (int i = nestedList.size() - 1; i >= 0; --i) {
+            s.push(nestedList[i]);
+        }
     }
 
     int next() {
-        return (*v)[i++].getInteger();
+        NestedInteger t = s.top(); s.pop();
+        return t.getInteger();
     }
 
     bool hasNext() {
-        while(1) {
-            if(v->size() <= i) {
-                if(s.empty()) return false;
-                i = s.top().second;
-                v = s.top().first;
-                s.pop();
-            }else { //v->size() > i
-                if(!(*v)[i].isInteger()){ // nested list,
-                    s.push(make_pair(v, i+1)); // then save current state  //!!!!!!!! make_pair
-                    v = &((*v)[i].getList()); // and go deeper
-                    i = 0;
-                }else{
-                    return true;
-                }
+        while (!s.empty()) {
+            NestedInteger t = s.top(); 
+            if (t.isInteger()) return true;
+            s.pop();
+            for (int i = t.getList().size() - 1; i >= 0; --i) {
+                s.push(t.getList()[i]);
             }
         }
+        return false;
     }
-};
-// 嵌套类可以随意访问外部类的任何数据属性，而外部类访问嵌套类就只能遵守访问修饰符。从这个角度看，嵌套类是外部类的补充，通过嵌套类可以获取更好的封装性，增加外部类的可维护性和可读性。      从程序结构看，嵌套类在逻辑上更加接近使用类。可以更有效地表示类与类之间的紧密程度。为类管理提供除命名空间外的另一种方法。
 
-// std::pair主要的作用是将两个数据组合成一个数据，两个数据可以是同一类型或者不同类型。例如std::pair<int,float> 或者 std：：pair<double,double>等。pair实质上是一个结构体，其主要的两个成员变量是first和second，这两个变量可以直接使用。
+private:
+    stack<NestedInteger> s;
+};
+/*
+这道题让我们建立压平嵌套链表的迭代器，关于嵌套链表的数据结构最早出现在Nested List Weight Sum中，而那道题是用的递归的方法来解的，而迭代器一般都是用迭代的方法来解的，而递归一般都需用栈来辅助遍历，由于栈的后进先出的特性，我们在对向量遍历的时候，从后往前把对象压入栈中，那么第一个对象最后压入栈就会第一个取出来处理，我们的hasNext()函数需要遍历栈，并进行处理，如果栈顶元素是整数，直接返回true，如果不是，那么移除栈顶元素，并开始遍历这个取出的list，还是从后往前压入栈，循环停止条件是栈为空，返回false，参见代码如下：*/
 /**
  * Your NestedIterator object will be instantiated and called as such:
  * NestedIterator i(nestedList);
  * while (i.hasNext()) cout << i.next();
  */
-
-/*
-class NestedIterator {
-private:
-    stack<NestedInteger> nodes;
-    
-public:
-    NestedIterator(vector<NestedInteger> &nestedList) {
-        int size = nestedList.size();
-        for(int i = size - 1; i >= 0; --i) {
-            nodes.push(nestedList[i]);
-        }
-    }
-
-int next() {
-    int result = nodes.top().getInteger();
-    nodes.pop();
-    return result;
-}
-
-bool hasNext() {
-    while(!nodes.empty()) {
-        NestedInteger curr = nodes.top();
-        if(curr.isInteger()) {
-            return true;
-        }
-        
-        nodes.pop();
-        vector<NestedInteger>& adjs = curr.getList();
-        int size = adjs.size();
-        for(int i = size - 1; i >= 0; --i) {
-            nodes.push(adjs[i]);
-        }
-    }
-    
-    return false;
-    }
-};
-//The same idea as a DFS, the only tricky part probably is you have to find a value node to claim there is next. And to do that, you have to look through all the nodes in the worst case in the entire graph. So you just keep going until you find a value node; if you can't, there is no next.
