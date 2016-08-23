@@ -10,7 +10,7 @@
 class Solution {  
     public:
     TreeNode* invertTree(TreeNode* root) {  
-        if(!root) return null;  
+        if(!root) return NULL;  
           
         TreeNode* temp  = root->left;  
         root->left = root->right;  
