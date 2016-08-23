@@ -13,7 +13,7 @@ public:
 
 class Solution {
 public:
-bool canConstruct1(string ransomNote, string magazine) {
+bool canConstruct(string ransomNote, string magazine) {
 	for (auto i : ransomNote) {
 		auto pos = magazine.find(i);
 		if (pos == string::npos) {
