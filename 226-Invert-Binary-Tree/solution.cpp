@@ -7,7 +7,7 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-public class Solution {  
+class Solution {  
     public:
     TreeNode* invertTree(TreeNode* root) {  
         if(!root) return null;  
@@ -21,8 +21,8 @@ public class Solution {
           
         return root;      
     }  
-      
-}  
+};
+
 /*
 class Solution {
 public:
