@@ -1,4 +1,4 @@
-/*class Solution {
+class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
         unordered_map<char, int> map;
@@ -9,8 +9,9 @@ public:
                 return false;
         return true;
     }
-}; */
+};
 
+/*
 class Solution {
 public:
 bool canConstruct(string ransomNote, string magazine) {
