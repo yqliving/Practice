@@ -1,14 +1,15 @@
 class Solution{
     public:
     int firstUniqChar(string s) {
-        vector<int> counts(128, 0);
-        for (auto m : s) {
-            counts[m]++;
+        if (s.size()==0) return -1;
+        vector<int> m(128, 0);
+        for (auto c:s)
+           m[c]++;
+        int i=0;   
+        for (;i<s.size();i++){
+            if (m[s[i]]==1) break;
         }
-        for (int i = 0; i < s.size(); i++) {
-            if(counts[s[i]]==1) return i;
-        }
-        return -1;
+        return (i==s.size()) ? -1 : i;
     }
 };/*class Solution {
 public:
