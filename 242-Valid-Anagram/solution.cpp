@@ -12,7 +12,7 @@ class Solution {
         }
         for (char n : t) {
             counts[n]--;
-            if (counts[n].second) return false;
+            if (counts.second) return false;
         }
         return true;
     }
