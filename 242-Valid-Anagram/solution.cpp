@@ -1,8 +1,22 @@
 //Hash Table
 
 //This idea uses a hash table to record the times of appearances of each letter in the two strings s and t. For each letter in s, it increases the counter by 1 while for each letter in t, it decreases the counter by 1. Finally, all the counters will be 0 if they two are anagrams of each other. The first implementation uses the built-in unordered_map and takes 36 ms.
-
 class Solution {
+    public:
+    bool isAnagram(string s, string t) {
+        if (s.length() != t.length()) return false;
+        unordered_map<char, int> counts;
+        for (char m : s) {
+            counts[m]++;
+        }
+        for (char n : t) {
+            counts[m]--;
+            if (counts[m]<0) return false;
+        }
+        return true;
+    }
+};
+/*class Solution {
 public:
     bool isAnagram(string s, string t) {
         if (s.length() != t.length()) return false;
