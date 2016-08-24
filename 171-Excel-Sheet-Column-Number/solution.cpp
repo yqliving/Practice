@@ -2,8 +2,8 @@ class Solution {
 public:
     int titleToNumber(string s) {
     int num = 0;
-    for (char m : s) {
-        num = num * 26 + (int)(m - 'A' + 1);
+    for (int i = 0; i < s.size(); i++) {
+        num = num * 26 + (int)(s[i] - 'A' + 1);
     }
     return num;
     }
