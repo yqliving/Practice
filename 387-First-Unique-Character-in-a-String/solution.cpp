@@ -1,12 +1,12 @@
 class Solution{
     public:
     int firstUniqChar(string s) {
-        vector<int> counts;
+        vector<int> counts(128, 0);
         for (auto m : s) {
-            counts[m - 'a']++;
+            counts[m]++;
         }
-        for (int i = 0; i < counts.size(); i++) {
-            if(counts[s[i] - 'a']==1) return i;
+        for (int i = 0; i < s.size(); i++) {
+            if(counts[s[i]]==1) return i;
         }
         return -1;
     }
