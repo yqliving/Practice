@@ -10,8 +10,8 @@ class Solution {
             counts[m]++;
         }
         for (char n : t) {
-            counts[m]--;
-            if (counts[m]<0) return false;
+            counts[n]--;
+            if (counts[n]<0) return false;
         }
         return true;
     }
