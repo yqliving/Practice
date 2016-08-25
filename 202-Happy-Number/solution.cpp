@@ -21,7 +21,7 @@ public:
     bool isHappy(int n) {
 
     if (n==1) return true;
-    unordered_map<int, bool> temp;
+    unordered_map<int, bool> tmp;
 
     while (n!=1) {
         if (tmp[n] == 0) {
