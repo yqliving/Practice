@@ -6,4 +6,4 @@ public:
         
     }
 };
-//fmod 取余
+//fmod 取余， 用％不行
