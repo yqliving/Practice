@@ -1,8 +1,10 @@
 class Solution {
     public:
     bool isPowerOfThree(int n) {
-        for (int i = 0; 3^i < n; i++) {
-            if (n > 3^i) break;
+        if (n==0) return false;
+        int i=0;
+        while(3^i < n) {
+            i++;
         }
         return (3^i == n) ;
         
