@@ -3,10 +3,11 @@ class Solution {
     bool isPowerOfThree(int n) {
         if (n==0) return false;
         int i=0;
-        while(3^i < n) {
-            i++;
+        for(; 3^i < n; i++){
+            if (n == 3^(i+1))) return true;
+            if(3^(i+1) > n) break;
         }
-        return (3^i == n) ;
+        return false;
         
     }
 };
