@@ -25,7 +25,7 @@ public:
 
     while (n!=1) {
         if (tmp[n] == 0) {
-            temp[n]++;
+            tmp[n]++;
         }else {
             return false;
         }
