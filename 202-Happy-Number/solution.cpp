@@ -1,8 +1,10 @@
-class Solution {
+/*class Solution {
 public:
     bool isHappy(int n) {
         if (n == 1) {
 		return true;
+        } else if (n == 4) {
+		return false;
         } else {
             int sum = 0;
             while (n){
@@ -11,28 +13,24 @@ public:
             }
             return isHappy(sum);
         }
-        return false;
     }
-};
+}; */
 
-/*class Solution {
+class Solution {
 public:
     bool isHappy(int n) {
 
     if (n==1) return true;
-
-    unordered_map<int, bool> m;
-    m[n]=true;
+    unordered_map<int, bool> temp;
 
     while (n!=1) {
-        n = squares(n);
-        //cout << n << endl;
-        if (m.find(n) != m.end()){
+        if (tmp[n] == 0) {
+            temp[n]++;
+        }else {
             return false;
         }
-        m[n] = true;
+        n = squares(n);
     }
-
     return true;
 }
 
