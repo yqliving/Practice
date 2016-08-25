@@ -37,7 +37,7 @@ public:
 int squares(int n) {
     int result = 0;
     for (; n>0; n/=10) {
-        result += pow( n%10, 2);
+        result += (n%10) * (n%10);
     }
     return result;
 }
