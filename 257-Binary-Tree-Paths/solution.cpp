@@ -9,13 +9,15 @@
  */
 class Solution {
 public:
-vector<string> answer;
-    vector<string> binaryTreePaths(TreeNode* root) {
+    vector<string> answer;
     
+    vector<string> binaryTreePaths(TreeNode* root) {
     if (root != NULL) searchBT(root, "");
     return answer;
-}
-private: void searchBT(TreeNode* root, string path) {
+    }
+    
+private: 
+    void searchBT(TreeNode* root, string path) {
     if (root->left == NULL && root->right == NULL) answer.push_back(path + to_string(root->val));
     if (root->left != NULL) searchBT(root->left, path + to_string(root->val) + "->");
     if (root->right != NULL) searchBT(root->right, path + to_string(root->val) + "->");
