@@ -12,7 +12,6 @@ class Solution {
 public:
     int minDepth(TreeNode* root) {
     if (!root)   return 0;
-    if(!root->left&&!root->right)return 1; //leaf found, just return 1
     if (!root -> left)
         return minDepth(root -> right) + 1;
     if (!root -> right)
