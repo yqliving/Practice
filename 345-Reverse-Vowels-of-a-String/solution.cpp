@@ -4,9 +4,9 @@ public:
         auto left = s.begin(), right = s.end() - 1;
         string vowels = "aeiouAEIOU";
         while(left < right) {
-            if((vowels.find(*left) == string::npos)) left++;
-            if((vowels.find(*right) == string::npos)) right--;
-            if (vowels.find(*left) != string::npos && vowels.find(*right) != string::npos) {
+            if((vowels.count(*left)) left++;    //vowels.find(*left) != string::npos
+            if((vowels.count(*right)) right--;
+            if(vowels.count(*left) && vowels.count(*right)) {
                 swap(*left, *right);
                 left++;
                 right--;
