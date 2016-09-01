@@ -3,8 +3,8 @@ public:
     bool isIsomorphic(string s, string t) {
         int n = s.size();
         
-        //int m1[256] = {0}, m2[256] = {0};
-        unordered_map<char, int> m1, m2;
+        int m1[256] = {0}, m2[256] = {0};
+        //unordered_map<char, int> m1, m2;
         
         for (int i = 0; i < n; ++i) {
             if (m1[s[i]] != m2[t[i]]) return false;
