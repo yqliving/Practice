@@ -49,7 +49,7 @@
                         ^           ^
                         pre         cur
  */
-/*class Solution {  
+class Solution {  
 public:  
     ListNode *swapPairs(ListNode *head) {  
          if(head == NULL || head->next == NULL) {  
@@ -72,7 +72,7 @@ public:
   
         return result;  
     }  
-};  */
+};  
 /*
 class Solution {
 public:
@@ -92,7 +92,7 @@ public:
         return tmp.next;
     }
 };
-*/
+
 
 // use recursion
 class Solution {
