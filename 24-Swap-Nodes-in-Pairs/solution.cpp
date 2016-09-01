@@ -49,6 +49,30 @@
                         ^           ^
                         pre         cur
  */
+class Solution {  
+public:  
+    ListNode *swapPairs(ListNode *head) {  
+         if(head == NULL || head->next == NULL) {  
+            return head;  
+        }  
+        ListNode *result = head->next;  
+        ListNode *preNode = NULL, *curNode = head, *nextNode = head->next;  
+        while(curNode != NULL && nextNode != NULL) {  
+            curNode->next = nextNode->next;  
+            nextNode->next = curNode;  
+            if(preNode != NULL) {  
+                preNode->next = nextNode;  
+            }  
+            preNode = curNode;  
+            curNode = curNode->next;  
+            nextNode = curNode->next;  
+        }  
+  
+        return result;  
+    }  
+};  
+
+/*
 class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
