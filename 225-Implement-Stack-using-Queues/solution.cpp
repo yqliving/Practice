@@ -22,5 +22,4 @@ public:
         return q.empty();
     }
 };
-};
 
