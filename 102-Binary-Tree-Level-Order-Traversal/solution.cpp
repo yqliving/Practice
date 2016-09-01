@@ -12,20 +12,21 @@ class Solution {
 public:
     vector<vector<int>> res;
     
-    vector<vector<int>> levelOrderBottom(TreeNode* root) {
+    vector<vector<int>> levelOrder(TreeNode* root) {
         Build(root,0);
         return res;
     }
     
     void Build(TreeNode* root,int layer){
         if(!root) return;
-        if(layer==res.size()) res.push_back(vector<int>{root->val});
+        if(layer>=res.size()) res.push_back(vector<int>{root->val});
         else res[layer].push_back(root->val);
         Build(root->left,layer+1);
         Build(root->right,layer+1);
         return;
     }
 };
+
 
 /*
 class Solution {
