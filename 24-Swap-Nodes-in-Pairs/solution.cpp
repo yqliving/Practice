@@ -53,9 +53,9 @@ class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
         if(!head) return NULL;
-        ListNode tmp(0);   // 不用tmp->next, because it's not a pointer
-        tmp.next = head;
-        ListNode *pre = &tmp, *cur = head;
+        ListNode* tmp(0);   // 不用tmp->next, because it's not a pointer
+        tmp->next = head;
+        ListNode *pre = tmp, *cur = head;
         while(cur && cur->next){
             pre->next = cur->next;
             pre = pre->next;
@@ -64,7 +64,7 @@ public:
             pre = cur;
             cur = cur->next;
         }
-        return tmp.next;
+        return tmp->next;
     }
 };
 
