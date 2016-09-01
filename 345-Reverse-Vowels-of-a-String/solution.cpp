@@ -4,8 +4,8 @@ public:
         auto left = s.begin(), right = s.end() - 1;
         set<char> vowels = {'a','e','i','o','u','A','E','I','O','U'};    //string vowels = "aeiouAEIOU";
         while(left < right) {
-            if((vowels.count(*left)) left++;    //vowels.find(*left) != string::npos
-            if((vowels.count(*right)) right--;
+            if(vowels.count(*left)) left++;    //vowels.find(*left) != string::npos
+            if(vowels.count(*right)) right--;
             if(vowels.count(*left) && vowels.count(*right)) {
                 swap(*left, *right);
                 left++;
