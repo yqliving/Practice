@@ -1,5 +1,6 @@
 //I think all previous C++ solutions read all words into a vector at the start. Here I read them on the fly.
-
+class Solution {
+public:
 bool wordPattern(string pattern, string str) {
     map<char, int> p2i;
     map<string, int> w2i;
@@ -12,6 +13,7 @@ bool wordPattern(string pattern, string str) {
     }
     return i == n;
 }
+};
 
     
     /*class Solution {
