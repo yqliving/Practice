@@ -6,7 +6,20 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-
+class Solution {  
+public:  
+    bool hasCycle(ListNode *head) {  
+        ListNode* first=head;  
+        ListNode* second=head;  
+        while(first!=NULL && second!=NULL && second->next!=NULL){ //注意这个条件判断不能写漏了。  
+            first=first->next;  
+            second=second->next->next;  
+            if(first==second)  
+                return true;  
+        }  
+        return false;  
+    }  
+};  
     /*
  * if there is a cycle in the list, then we can use two pointers travers the list.
  *
@@ -14,7 +27,7 @@
  *
  * so, those two pointers meet together, that means there must be a cycle inside the list.
  */
-
+/*
 class Solution {  
  public:  
       bool hasCycle(ListNode *head) {  
