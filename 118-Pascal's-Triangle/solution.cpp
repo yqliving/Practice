@@ -1,4 +1,4 @@
-class Solution {
+/*class Solution {
 public:
     vector<vector<int>> generate(int numRows) {
         vector<vector<int>> res;
@@ -12,11 +12,11 @@ public:
         }
         return res;
     }
-};
+};*/
 
 
 
-/*class Solution {
+class Solution {
 public:
     vector<vector<int> > generate(int numRows) {
         vector<vector<int>> res(numRows);      ///initial 2D  如果是一维的，可以直接res（num， 1）
