@@ -20,12 +20,6 @@ Special thanks to [@yukuairoy](https://leetcode.com/discuss/user/yukuairoy) for 
 
 <div>
 
-<div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
-
-<span class="hidebutton">[Two Sigma](/company/two-sigma/)</span></div>
-
-<div>
-
 <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
 
 <span class="hidebutton">[Bit Manipulation](/tag/bit-manipulation/)</span></div>
