@@ -19,7 +19,7 @@ public:
     
     void Build(TreeNode* root,int layer){
         if(!root) return;
-        if(layer==res.size()) res.push_back(vector<int>());
+        if(layer==res.size()) res.push_back(vector<int>{});
         res.push_back(root->val);
         
         else res[layer].push_back(root->val);
