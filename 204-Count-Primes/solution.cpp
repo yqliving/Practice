@@ -1,4 +1,29 @@
-//12 ms:
+//素数不能被比它小的整数整除, 建一个boolean 数组, 从2开始, 把其倍数小于N的都删掉.//12 ms:
+class Solution {  
+    public:
+    int countPrimes(int n) {  
+     //2,3,5,7,11,13,17   
+     //20  5  
+     //init check  n  
+     bool a = new bool[n];  
+     for(int i=2; i*i<n; i++) {  
+        if(!a[i]) {  
+            for(int j=i; i*j<n; j++) {  
+                a[i*j] = true;  
+            }  
+        }  
+     }  
+     int c=0;  
+       
+     for(int i=2; i<n; i++) {  
+         if(a[i] == false) ++c;  
+     }  
+     return c;  
+    }  
+};  
+
+
+/*
 //Here notPrime[i] refer to the number a = 2* i + 1, so the marking process starts from a^2 which is 2i(i+1) back to index
 class Solution {
 public:
