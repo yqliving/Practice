@@ -18,8 +18,16 @@ public:
 private:
     vector<int> accu;
 };
-
 // Your NumArray object will be instantiated and called as such:
 // NumArray numArray(nums);
 // numArray.sumRange(0, 1);
 // numArray.sumRange(1, 2);
+
+/*
+提示：数组不会发生变化；大量sumRange函数调用。
+
+题目本身非常简单，只需要遍历 i 到 j ，累计得到和即可。但是，这样是TLE的，所给提示也就没有意义了。
+
+所以，题目考察的是效能，换一个方向思考，我们可以存储子序列和，每个下标处的值为[0,i]的所有元素和;
+
+那么[i,j]子序列和 =sum[j]−sum[i−1]；
