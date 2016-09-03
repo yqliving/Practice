@@ -7,7 +7,7 @@
  * };
  */
 /*1）比较朴素的算法。 
-　　由于给定的数据结构是单链表，要访问链表的尾部元素，必须从头开始遍历。为了方便判断，我们可以申请一个辅助栈结构来存储链表的内容，第一次遍历将链表节点值依次入栈，第二次遍历比较判断是否为回文。 */
+　　申请一个辅助栈结构来存储链表的内容，第一次遍历将链表节点值依次入栈，第二次遍历比较判断是否为回文。 
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
@@ -27,6 +27,31 @@ public:
         st.pop();
     }
         return true;
+    }
+}; */
+
+//可以想到递归的过程本身就是出入栈的过程，我们可以先递归访问单链表，然后做比较。这样就省去了辅助空间，从而将空间复杂度降为O(1)
+class Solution {
+private:
+    ListNode *lst;
+public:
+    bool judge(ListNode *head)
+    {
+        if(head == NULL) return true;
+
+        if(judge(head->next) == false) return false;
+
+        if(lst->val != head->val) return false;
+        else{
+            lst = lst->next;
+            return true;
+        }
+    }
+    bool isPalindrome(ListNode* head) {
+        if(head == NULL || head->next == NULL) return true;
+        lst = head;
+
+        return judge(head);
     }
 };/*
 class Solution {
