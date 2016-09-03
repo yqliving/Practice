@@ -6,7 +6,7 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-/*class Solution {
+class Solution {
 public:
     bool isPalindrome(ListNode* head) {
     if (head == NULL)   return true;
@@ -35,7 +35,7 @@ public:
     }
     return true;
 }
-}; */
+}; 
 /* Time ~ O(N), Space ~ O(1)
 Since it requires constant space, we can't use Hashtable.
 Approach:
@@ -49,7 +49,7 @@ If so we have a palindrome Linked List, otherwise, we don't.
 
 
 /*1）比较朴素的算法。 
-　　申请一个辅助栈结构来存储链表的内容，第一次遍历将链表节点值依次入栈，第二次遍历比较判断是否为回文。 */
+　　申请一个辅助栈结构来存储链表的内容，第一次遍历将链表节点值依次入栈，第二次遍历比较判断是否为回文。
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
