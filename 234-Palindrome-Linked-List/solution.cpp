@@ -6,7 +6,30 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+/*1）比较朴素的算法。 
+　　由于给定的数据结构是单链表，要访问链表的尾部元素，必须从头开始遍历。为了方便判断，我们可以申请一个辅助栈结构来存储链表的内容，第一次遍历将链表节点值依次入栈，第二次遍历比较判断是否为回文。 */
+　　
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        if(head == NULL || head->next == NULL) return true;
+        stack<int> st;
+    ListNode *tmp = head;
+        while(tmp)
+        {
+            st.push(tmp->val);
+            tmp = tmp->next;
+        }
 
+    while(head)
+    {
+        if(head->val != st.top() ) return false;
+        head = head->next;
+        st.pop();
+    }
+        return true;
+    }
+};/*
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
