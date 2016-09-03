@@ -13,7 +13,7 @@ public:
     
     // find the list center
     ListNode* slow = head,* fast = head;
-    while (fast -> next != NULL && fast->next->next != NULL) {
+    while (  fast->next->next != NULL) {
         fast = fast->next->next;
         slow = slow->next;
     }
