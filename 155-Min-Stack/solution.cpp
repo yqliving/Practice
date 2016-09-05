@@ -9,7 +9,7 @@ public:
     
     void push(int x) {
         s1.push_back(x);
-        if x < getMin();
+        if (s2.empty() || x <= getMin())
         s2.push_back(x);
         
     }
@@ -17,17 +17,17 @@ public:
     void pop() {
         int p = s1.top();
         s1.pop();
-        if (p = s2.top()) s2.pop;
+        if (p == getMin()) s2.pop;
         
     }
     
     int top() {
-        s1.top();
+        return s1.top();
         
     }
     
     int getMin() {
-        s2.top();
+        return s2.top();
         
     }
 };
@@ -40,3 +40,4 @@ public:
  * int param_3 = obj.top();
  * int param_4 = obj.getMin();
  */
+ 
