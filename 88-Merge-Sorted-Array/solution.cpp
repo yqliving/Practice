@@ -13,11 +13,11 @@ public:
                 r--;
                 end2--;
             }
+        }
             while (end2 >= 0) {
-                nums1[r] = nums[end2];
+                nums1[r] = nums2[end2];
                 r--;
                 end2--;
             }
-        }
     }
 };
