@@ -1,27 +1,37 @@
 class MinStack {
 public:
     /** initialize your data structure here. */
-    private:
-    stack<int> s1;
-    stack<int> s2;
-public:
+    stack<int> s1, s2;
+    
+    MinStack() {
+        
+    }
+    
     void push(int x) {
-	    s1.push(x);
-	    if (s2.empty() || x <= getMin())  s2.push(x);	    
+        s1.push_back(x);
+        if x < getMin();
+        s2.push_back(x);
+        
     }
+    
     void pop() {
-	    if (s1.top() == getMin())  s2.pop();
-	    s1.pop();
+        int p = s1.top();
+        s1.pop();
+        if (p = s2.top()) s2.pop;
+        
     }
+    
     int top() {
-	    return s1.top();
+        s1.top();
+        
     }
+    
     int getMin() {
-	    return s2.top();
+        s2.top();
+        
     }
 };
 
-//use two stack, one shore all the data, the other store the minimum values.
 /**
  * Your MinStack object will be instantiated and called as such:
  * MinStack obj = new MinStack();
