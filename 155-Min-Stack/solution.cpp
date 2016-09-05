@@ -8,9 +8,9 @@ public:
     }
     
     void push(int x) {
-        s1.push_back(x);
+        s1.push(x);
         if (s2.empty() || x <= getMin())
-        s2.push_back(x);
+        s2.push(x);
         
     }
     
