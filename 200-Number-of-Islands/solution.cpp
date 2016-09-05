@@ -15,7 +15,7 @@ int numIslands(vector<vector<char>>& grid) {
 void helper(vector<vector<char>>& grid, int row, int col){
     if(row < 0 || col < 0 || row == grid.size() || col == grid[row].size()) return ;
     if(grid[row][col] == '1') {
-        grid[row][col] = '2';
+        grid[row][col] = '0';
         helper(grid, row - 1, col);
         helper(grid, row + 1, col);
         helper(grid, row, col - 1);
